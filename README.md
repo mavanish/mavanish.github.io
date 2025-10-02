@@ -1,2 +1,2 @@
 
-## [mavanish.github.io/](https://mavanish.github.io/)
+## [mavanish.github.io](https://mavanish.github.io/)
