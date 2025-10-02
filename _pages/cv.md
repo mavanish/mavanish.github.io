@@ -35,6 +35,7 @@ Development
 1. [aNANt:](https://anant.mrc.iisc.ac.in/) During my Ph.D., I co-developed “aNANt”, the first computational materials database from India; it currently holds around 23,000 MXenes along with their optimized structures and electronic properties. 
 2. [VirTex:](https://virtex.readthedocs.io/) A Python package for virtual texture analysis from atomistic microstructures; orientation relationship, misorientation, Schmid factor, twin characterization, etc.
 3. [JARVIS-Leaderboard:](https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors) An official contributor to the NIST project for bench-marking performances of various methods for materials science applications
+4. [URSA:](https://github.com/lanl/ursa) An official contributor to the LANL's URSA - The Universal Research and Scientific Agent
 
 
 Awards
