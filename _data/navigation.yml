@@ -6,8 +6,11 @@ main:
     #url: /talks/    
 
   - title: "Research"
-    url: /research/    
-    
+    url: /research/
+
+  - title: "Group"
+    url: /group/
+
   # - title: "About Me"
   #   url: /portfolio/
   
