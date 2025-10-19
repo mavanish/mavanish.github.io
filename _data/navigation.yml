@@ -11,8 +11,8 @@ main:
   - title: "Group"
     url: /group/
 
-  - title: "Openings"
-    url: /openings/
+  - title: "Opennings"
+    url: /opennings/
 
   # - title: "About Me"
   #   url: /portfolio/
