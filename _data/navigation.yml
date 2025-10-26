@@ -10,9 +10,10 @@ main:
 
   - title: "Group"
     url: /group/
-    
+
   - title: "Openings"
     url: /openings/
+
   # - title: "About Me"
   #   url: /portfolio/
   
