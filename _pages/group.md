@@ -11,9 +11,11 @@ author_profile: true
   <img src="/images/avanish.jpeg" alt="Avanish Mishra" class="team-member__photo">
   <div class="team-member__details">
     <h3>Avanish Mishra</h3>
+
     <p align="justify">Staff Scientist in the Physics and Chemistry of Materials Group (T-1) of the Theoretical Division at Los Alamos National Laboratory (LANL), focusing on assessing quantum advantage for quantum chemistry applications.</p>
     <p align="justify">Research portfolio spans the modeling of structural materials operating under extreme conditions—from fusion reactors and shock deformation environments to high-radiation settings—and the design of functional materials that power energy and electronic technologies.</p>
     <p align="justify">Avanish also leads efforts in leveraging machine learning to uncover hidden correlations in complex datasets, accelerating virtual characterization workflows, and complementing experimental collaborations across LANL.</p>
+
   </div>
 </div>
 
