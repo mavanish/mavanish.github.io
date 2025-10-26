@@ -5,19 +5,22 @@ permalink: /openings/
 author_profile: true
 ---
 
-We welcome inquiries from motivated researchers and students who would like to join our group. If any of the opportunities below resonate with your background and interests, please email Avanish Mishra with your CV and a short note on how you would like to contribute.
+We are actively recruiting at multiple levels. If one of the opportunities below matches your expertise, please email Avanish Mishra your CV and a short cover letter. Be sure to include the position you are targeting in the subject line so we can route your inquiry quickly.
 
 ## Postdoc positions
 
-- Ideal for scholars with expertise in quantum chemistry, materials modeling, or machine-learning techniques for scientific discovery.
-- Opportunities to lead collaborative projects and mentor junior group members.
+- Focus on quantum chemistry, advanced materials modeling, and machine-learning accelerated discovery.
+- Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
+- Funding is available for immediate starts; please mention your earliest availability.
 
 ## Graduate positions
 
-- Designed for students who want to tackle theory- and computation-driven research problems in materials science and quantum technologies.
-- Support is available for both PhD and MS students interested in interdisciplinary collaborations.
+- Suitable for PhD or MS students with a strong interest in theory-driven and computational research.
+- Opportunities to work on interdisciplinary projects that bridge quantum technologies and materials science.
+- Please share any prior research experience or publications when you reach out.
 
 ## Undergraduate positions
 
-- Great for students looking for hands-on experience in computational materials science and data-driven discovery.
-- Projects can be tailored to independent study, senior theses, or summer research opportunities.
+- Ideal for students seeking hands-on experience in computational materials research.
+- Projects can be shaped into independent studies, theses, or summer research appointments.
+- Let us know your programming background and time commitment preferences.
