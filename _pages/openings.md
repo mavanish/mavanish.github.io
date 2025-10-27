@@ -5,22 +5,22 @@ permalink: /openings/
 author_profile: true
 ---
 
-We are actively recruiting at multiple levels. If one of the opportunities below matches your expertise, please email Avanish Mishra your CV and a short cover letter. Be sure to include the position you are targeting in the subject line so we can route your inquiry quickly.
+We are actively recruiting at multiple levels. If one of the opportunities below matches your expertise, please email Avanish Mishra your CV and a short cover letter.
+
+**Only Non-sensitive Foregine national, Permantent Resident, and US Citizen**
 
 ## Postdoc positions
+- **No Open** Position
+- If you have strong research background and evidence, could nominate for Fellowship at LANL (highly competative)
+  - Focus on AI for materials, advanced materials modeling, machine-learning accelerated discovery, and  quantum computing for materials and chemistry,.
+  - Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
 
-- Focus on quantum chemistry, advanced materials modeling, and machine-learning accelerated discovery.
-- Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
-- Funding is available for immediate starts; please mention your earliest availability.
 
 ## Graduate positions
 
-- Suitable for PhD or MS students with a strong interest in theory-driven and computational research.
-- Opportunities to work on interdisciplinary projects that bridge quantum technologies and materials science.
-- Please share any prior research experience or publications when you reach out.
+- Through Office of Science Graduate Student Research (SCGSR) Program (https://science.osti.gov/wdts/scgsr)
+- Summer Schools
 
 ## Undergraduate positions
 
-- Ideal for students seeking hands-on experience in computational materials research.
-- Projects can be shaped into independent studies, theses, or summer research appointments.
-- Let us know your programming background and time commitment preferences.
+- Through The Science Undergraduate Laboratory Internships (SULI) Program  (https://science.osti.gov/wdts/suli)
