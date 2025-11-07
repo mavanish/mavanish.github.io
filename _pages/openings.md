@@ -10,7 +10,7 @@ We are actively recruiting at multiple levels. If one of the opportunities below
 **Only Non-sensitive Foregine national, Permantent Resident, and US Citizen**
 
 ## Postdoc positions
-- **No Open** Position
+- **Quantum Computing Postdoc Research Associate** Position lanl.jobs look for IRC139669.
 - If you have strong research background and evidence, could nominate for Fellowship at LANL (highly competative)
   - Focus on AI for materials, advanced materials modeling, machine-learning accelerated discovery, and  quantum computing for materials and chemistry,.
   - Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
