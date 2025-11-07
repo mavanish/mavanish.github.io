@@ -8,6 +8,9 @@ main:
   - title: "Research"
     url: /research/
 
+  - title: "About Me"
+    url: /cv/
+    
   - title: "Group"
     url: /group/
 
@@ -17,10 +20,6 @@ main:
   # - title: "About Me"
   #   url: /portfolio/
   
-  - title: "About Me"
-    url: /cv/
-
-    
   - title: "Publications"
     #url: <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank">
     url: "https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en"
