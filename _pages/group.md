@@ -12,21 +12,17 @@ author_profile: true
   <div class="team-member__details">
     <h3>Avanish Mishra</h3>
 
-    <p align="justify">Staff Scientist in the Physics and Chemistry of Materials Group (T-1) of the Theoretical Division at Los Alamos National Laboratory (LANL)
-    - 
-    BSc in Physics, Sun Yat-Sen University
-    Ph.D. in Chemical Physics, The University of Hong Kong
-    Postdoc at Northwestern University
-    Director's Fellow at Los Alamos National Laboratory. </p>
+    <p align="justify">Staff Scientist in the Physics and Chemistry of Materials Group (T-1) of the Theoretical Division at Los Alamos National Laboratory (LANL) </p>
 
   </div>
 </div>
 
 ## Members
 
-### Postdoctoral Researchers
+### Postdocs
 
-- **Arindam Debanath** – Postdoctoral Researcher working on Automated Discovery of Alloys (details coming soon).
+- **Arindam Debanath** 
+- **Jacob Z. Williams** (with Dr. Yu Zhang, T-1, LANL)
 
 <style>
 .team-member {
