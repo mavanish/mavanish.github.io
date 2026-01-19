@@ -5,22 +5,28 @@ permalink: /openings/
 author_profile: true
 ---
 
-We are actively recruiting at multiple levels. If one of the opportunities below matches your expertise, please email Avanish Mishra your CV and a short cover letter.
+I am actively recruiting at multiple levels. If one of the opportunities below matches your expertise, please me email your CV and a short cover letter.
 
 **Only Non-sensitive Foregine national, Permantent Resident, and US Citizen**
 
 ## Postdoc positions
-- **Quantum Computing Postdoc Research Associate** Position [lanl.jobs](https://lanl.jobs) look for [IRC139669](https://lanl.jobs/search/jobdetails/quantum-computing-postdoc-research-associate/afc66a71-5714-4906-933e-017ca44f62be).
-- If you have strong research background and evidence, could nominate for Fellowship at LANL (highly competative)
-  - Focus on AI for materials, advanced materials modeling, machine-learning accelerated discovery, and  quantum computing for materials and chemistry,.
-  - Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
-
+- **Director’s Postdoc Fellow and Distinguished Fellows**
+- My team’s regular postdoctoral positions are currently filled. However, if you are an exceptional candidate, we may be able to pursue a CNLS (Center for Nonlinear Studies) postdoctoral fellowship.
+- Truly outstanding applicants may also be considered for the Lab’s prestigious and highly competitive Director’s and Oppenheimer postdoctoral fellowships. These fellowships provide the opportunity to pursue independent research and require nomination by current Lab staff (either me or another staff member whose expertise best aligns with your proposed work). Selection is a rigorous two-stage process: Director’s Fellowships are awarded quarterly. Decisions are based on the research proposal and the candidate’s academic and research record.
+- If you would like to be considered, please send me your CV, and a brief statement of research interests to start the conversation. If I believe another staff member would be a better match for your area or proposed research, I will help connect you with the appropriate person.
 
 ## Graduate positions
 
 - Through Office of Science Graduate Student Research (SCGSR) Program (https://science.osti.gov/wdts/scgsr)
+- NATIONAL NUCLEAR SECURITY ADMINISTRATION LABORATORY RESIDENCY GRADUATE FELLOWSHIP (LRGF)
 - Summer Schools
 
 ## Undergraduate positions
 
 - Through The Science Undergraduate Laboratory Internships (SULI) Program  (https://science.osti.gov/wdts/suli)
+<!-- 
+- **Quantum Computing Postdoc Research Associate** Position [lanl.jobs](https://lanl.jobs) look for [IRC139669](https://lanl.jobs/search/jobdetails/quantum-computing-postdoc-research-associate/afc66a71-5714-4906-933e-017ca44f62be).
+- If you have strong research background and evidence, could nominate for Fellowship at LANL (highly competative)
+  - Focus on AI for materials, advanced materials modeling, machine-learning accelerated discovery, and  quantum computing for materials and chemistry,.
+  - Expect to co-lead projects, collaborate across institutions, and mentor students in the group.
+-->
