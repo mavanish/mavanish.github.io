@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avanish Mishra — Scientist | AI · Materials Science · Quantum Computing</title>
+    <meta name="description"
+        content="Staff Scientist at Los Alamos National Laboratory. Research in quantum computing, AI-driven materials science, and computational materials design." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <!-- ============= PARTICLE CANVAS ============= -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ============= NAVIGATION ============= -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">CI<span class="accent">MS</span></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#software">Software</a>
+            <a href="#group">Group</a>
+            <a href="#openings">Openings</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile nav overlay -->
+    <div id="mobileNav" class="mobile-nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#software">Software</a>
+        <a href="#group">Group</a>
+        <a href="#openings">Openings</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <section id="hero">
+        <div class="hero-title-block">
+            <h1>
+                <span class="hero-name">Computational Intelligence for <span class="accent">Materials</span></span>
+                <span class="hero-acronym">(CIMS)</span>
+            </h1>
+        </div>
+        <div class="hero-bottom">
+            <div class="hero-content">
+                <p class="hero-subname">Hello I am <strong>Avanish Mishra</strong></p>
+                <p class="hero-tagline">Staff Scientist — Advancing <span class="glow-text">AI/ML for Materials Design &
+                        Discovery</span> and applying <span class="glow-text">Quantum Computing</span> to materials
+                    physics
+                    and chemistry</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="citations-counter" data-target="2330">0</span><span
+                            class="stat-plus">+</span>
+                        <span class="stat-label">Citations</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Research Areas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">Software Tools</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#research" class="btn-primary">Explore Research</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/mavanish" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" aria-label="Google Scholar">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                        </svg>
+                    </a>
+                    <a href="https://orcid.org/0000-0003-3997-0445" target="_blank" rel="noopener" aria-label="ORCID">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-1.209-.659-3.722-3.853-3.722h-2.466z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="quantum-orb">
+                    <div class="orb-ring ring-1"></div>
+                    <div class="orb-ring ring-2"></div>
+                    <div class="orb-ring ring-3"></div>
+                    <div class="orb-core"></div>
+                </div>
+            </div>
+        </div><!-- /hero-bottom -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ============= ABOUT SECTION ============= -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01 / About</span>
+                <h2>AI-Driven Materials Design Meets Quantum Computing</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead">I am a staff scientist in the <strong>Theoretical Division</strong> at
+                        <strong>Los Alamos National Laboratory</strong>, where my work primarily focuses on AI/ML-driven
+                        materials design and assessing quantum advantage for quantum chemistry applications.
+                    </p>
+                    <p>My research spans the modeling of structural materials for extreme conditions — fusion reactors,
+                        shock deformation, and high-radiation environments — as well as the exploration and design of
+                        functional materials from bulk to 2D for energy and electronics.</p>
+                    <p>A significant portion of my work leverages <strong>machine learning algorithms</strong> to
+                        accelerate materials discovery, uncovering hidden correlations in vast datasets and developing
+                        virtual characterization tools that complement experiments.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🎓</div>
+                        <h3>Education</h3>
+                        <p><strong>Ph.D in Materials Science</strong><br />Indian Institute of Science, Bangalore</p>
+                        <p class="subtle">M.Sc. Physics — DDU Gorakhpur University</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏆</div>
+                        <h3>Recognition</h3>
+                        <p><strong>Director's Postdoc Fellow</strong><br />Los Alamos National Laboratory, 2022</p>
+                        <p class="subtle">GATE AIR 36 · CSIR-NET AIR 58</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">📑</div>
+                        <h3>Reviewing</h3>
+                        <p>Physical Review Letters, PRB, npj Computational Materials, Advanced Functional Materials, and
+                            10+ journals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= RESEARCH SECTION ============= -->
+    <section id="research" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02 / Research</span>
+                <h2>Research Frontiers</h2>
+                <p class="section-subtitle">Exploring the intersection of computation, quantum mechanics, and
+                    intelligent systems</p>
+            </div>
+            <div class="research-grid">
+                <!-- Card 1: Materials Informatics (AI) -->
+                <div class="research-card" data-tilt data-modal="modal-ai">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="8" y="8" width="48" height="48" rx="4" />
+                            <rect x="18" y="18" width="12" height="12" rx="2" />
+                            <rect x="34" y="18" width="12" height="12" rx="2" />
+                            <rect x="18" y="34" width="12" height="12" rx="2" />
+                            <rect x="34" y="34" width="12" height="12" rx="2" />
+                        </svg>
+                    </div>
+                    <h3>Materials Informatics</h3>
+                    <p>Data-driven discovery fusing physics-based descriptors with ML models. Active learning, graph
+                        neural networks, and explainable AI for accelerated materials design.</p>
+                    <div class="card-tags">
+                        <span>ML/AI</span><span>Active Learning</span><span>GNNs</span><span>XAI</span>
+                    </div>
+                    <span class="card-cta">Learn more →</span>
+                </div>
+                <!-- Card 2: Structural Materials -->
+                <div class="research-card" data-tilt data-modal="modal-structural">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="32,4 60,52 4,52" />
+                            <circle cx="32" cy="38" r="8" />
+                            <line x1="32" y1="18" x2="32" y2="28" />
+                        </svg>
+                    </div>
+                    <h3>Structural Materials</h3>
+                    <p>Predictive models for extreme environments — fusion reactors, shock deformation, and radiation
+                        damage. Multiscale simulations from atoms to continuum.</p>
+                    <div class="card-tags">
+                        <span>Fusion</span><span>Shock Physics</span><span>Radiation</span>
+                    </div>
+                    <span class="card-cta">Learn more →</span>
+                </div>
+                <!-- Card 3: Functional Materials -->
+                <div class="research-card" data-tilt data-modal="modal-functional">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M32 4 L58 20 L58 44 L32 60 L6 44 L6 20 Z" />
+                            <path d="M32 20 L46 28 L46 40 L32 48 L18 40 L18 28 Z" />
+                        </svg>
+                    </div>
+                    <h3>Functional Materials</h3>
+                    <p>Engineering materials from bulk to 2D — complex oxides, heterostructures, and hybrids for energy,
+                        electronics, and photonics.</p>
+                    <div class="card-tags">
+                        <span>2D Materials</span><span>MXenes</span><span>Energy</span>
+                    </div>
+                    <span class="card-cta">Learn more →</span>
+                </div>
+                <!-- Card 4: Quantum Computing -->
+                <div class="research-card" data-tilt data-modal="modal-qc">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="32" cy="32" r="28" />
+                            <ellipse cx="32" cy="32" rx="12" ry="28" />
+                            <line x1="4" y1="32" x2="60" y2="32" />
+                            <line x1="32" y1="4" x2="32" y2="60" />
+                        </svg>
+                    </div>
+                    <h3>Quantum Computing</h3>
+                    <p>Hybrid quantum–classical strategies for correlated materials. Variational algorithms, error
+                        mitigation, and domain-specific workflows for catalysis and energy storage.</p>
+                    <div class="card-tags">
+                        <span>VQE</span><span>Error Mitigation</span><span>Quantum Chemistry</span>
+                    </div>
+                    <span class="card-cta">Learn more →</span>
+                </div>
+                <!-- Card 5: Virtual Characterization -->
+                <div class="research-card" data-tilt data-modal="modal-virtual">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="32" cy="32" r="24" />
+                            <path d="M32 8 Q48 24 32 40 Q16 56 32 56" />
+                            <path d="M16 20 L48 20" />
+                            <path d="M12 32 L52 32" />
+                            <path d="M16 44 L48 44" />
+                        </svg>
+                    </div>
+                    <h3>Virtual Characterization</h3>
+                    <p>Computational tools for texture analysis, diffraction simulation, and orientation relationships
+                        from atomistic data.</p>
+                    <div class="card-tags">
+                        <span>VirTex</span><span>Diffraction</span><span>Microstructure</span>
+                    </div>
+                    <span class="card-cta">Learn more →</span>
+                </div>
+            </div>
+
+            <!-- ===== RESEARCH MODALS ===== -->
+            <div class="modal-overlay" id="modal-ai">
+                <div class="modal-content glass-card">
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                    <h2>Materials Informatics & AI</h2>
+                    <p>Materials informatics provides a data-driven lens for discovering compounds and microstructures
+                        with unprecedented performance. We develop algorithms that fuse physics-based descriptors with
+                        machine-learning models to predict properties, identify synthesis pathways, and quantify
+                        uncertainty.</p>
+                    <h4>Key Thrusts</h4>
+                    <ul>
+                        <li><strong>Active learning workflows</strong> that adaptively explore vast chemical and
+                            structural spaces while minimizing expensive simulations and experiments.</li>
+                        <li><strong>Graph and geometric deep learning</strong> approaches that capture symmetry,
+                            defects, and mesoscale features essential for accurate property predictions.</li>
+                        <li><strong>Explainable AI frameworks</strong> that translate model predictions into actionable
+                            design rules for collaborators across materials domains.</li>
+                    </ul>
+                    <p>By building open datasets and scalable software, we enable the community to accelerate discovery
+                        cycles and bridge the gap between computation and laboratory realization.</p>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" class="btn-primary">View Publications →</a>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="modal-structural">
+                <div class="modal-content glass-card">
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                    <h2>Modeling of Structural Materials</h2>
+                    <p>Our group builds predictive models that explain how structural materials behave when subjected to
+                        extreme operating environments. We combine electronic-structure calculations, large-scale
+                        molecular dynamics, and mesoscale simulations to identify the atomistic mechanisms that control
+                        degradation pathways.</p>
+                    <h4>Key Thrusts</h4>
+                    <ul>
+                        <li><strong>Fusion environments:</strong> quantifying plasma–material interactions, hydrogen
+                            retention, and neutron-driven embrittlement in candidate divertor and first-wall alloys.
+                        </li>
+                        <li><strong>High-rate deformation:</strong> linking defect nucleation under shock loading to
+                            macroscopic strength through multiscale constitutive descriptions.</li>
+                        <li><strong>Radiation damage tolerance:</strong> mapping cascade evolution and microstructural
+                            recovery to guide the design of alloys with improved radiation resistance.</li>
+                    </ul>
+                    <p>By integrating high-fidelity simulations with experimental data, we deliver design rules that
+                        accelerate the deployment of durable materials for next-generation energy systems.</p>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" class="btn-primary">View Publications →</a>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="modal-functional">
+                <div class="modal-content glass-card">
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                    <h2>Modeling of Functional Materials</h2>
+                    <p>We explore how functional materials can be engineered across length scales to enable
+                        transformative energy, sensing, and electronic technologies. Our simulations reveal how
+                        chemistry, defects, and interfaces collectively govern emergent properties in complex oxides, 2D
+                        heterostructures, and hybrid materials.</p>
+                    <h4>Key Thrusts</h4>
+                    <ul>
+                        <li><strong>Energy conversion and storage:</strong> optimizing ion transport and stability in
+                            solid-state electrolytes and catalytic surfaces.</li>
+                        <li><strong>Electronics and photonics:</strong> tailoring polarization, band alignment, and
+                            excitonic responses for low-power information processing.</li>
+                        <li><strong>Coupled multifunctionality:</strong> designing materials that exhibit simultaneous
+                            mechanical, electronic, and thermal performance via interface engineering.</li>
+                    </ul>
+                    <p>These insights guide collaborations with experimental partners to accelerate the transition of
+                        functional materials from discovery to device integration.</p>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" class="btn-primary">View Publications →</a>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="modal-qc">
+                <div class="modal-content glass-card">
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                    <h2>Quantum Computing for Materials</h2>
+                    <p>Quantum computing promises to transform the way we model correlated materials and chemical
+                        reactions. We investigate hybrid quantum–classical strategies that deliver verifiable speedups
+                        over classical approaches while remaining compatible with near-term hardware constraints.</p>
+                    <h4>Key Thrusts</h4>
+                    <ul>
+                        <li><strong>Algorithm development:</strong> tailoring variational quantum algorithms for
+                            strongly correlated electrons, defect spectroscopy, and dynamical response calculations.
+                        </li>
+                        <li><strong>Error mitigation and benchmarking:</strong> quantifying hardware noise, designing
+                            compact ansätze, and developing validation protocols that certify quantum advantage claims.
+                        </li>
+                        <li><strong>Domain-specific workflows:</strong> integrating quantum solvers with classical
+                            simulations to tackle multiscale challenges in catalysis, energy storage, and quantum
+                            materials.</li>
+                    </ul>
+                    <p>Through close collaboration with hardware providers and national laboratories, we test emerging
+                        technologies on real devices and map the practical pathways toward scalable quantum materials
+                        discovery.</p>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" class="btn-primary">View Publications →</a>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="modal-virtual">
+                <div class="modal-content glass-card">
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                    <h2>Virtual Characterization</h2>
+                    <p>High-fidelity simulations routinely produce terabytes of atomistic configurations, yet extracting
+                        actionable knowledge remains challenging. We advance virtual characterization tools that
+                        translate raw atomic data into experimentally relevant observables and intuitive microstructural
+                        descriptors.</p>
+                    <h4>Key Thrusts</h4>
+                    <ul>
+                        <li><strong>Diffraction and spectroscopy pipelines</strong> that compute X-ray, neutron, and
+                            electron signatures directly from atomistic snapshots for one-to-one comparison with
+                            measurements.</li>
+                        <li><strong>Texture and microstructure analytics</strong> that quantify grain morphology,
+                            dislocation content, and interfacial statistics to reveal processing–structure–property
+                            relationships.</li>
+                        <li><strong>Immersive visualization and XR frameworks</strong> that allow researchers to
+                            interrogate complex microstructures collaboratively in interactive environments.</li>
+                    </ul>
+                    <p>These capabilities enable rapid feedback between simulation and experiment, closing the loop for
+                        accelerated materials qualification and certification.</p>
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
+                        rel="noopener" class="btn-primary">View Publications →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= TIMELINE SECTION ============= -->
+    <section id="publications" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03 / Impact</span>
+                <h2>Publications & Impact</h2>
+                <p class="section-subtitle">A selection of recent contributions to the field</p>
+            </div>
+            <div class="impact-banner">
+                <div class="impact-stat">
+                    <span class="big-number" id="citations-impact">2,330+</span>
+                    <span>Total Citations</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="big-number">50+</span>
+                    <span>Publications</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="big-number">16</span>
+                    <span>Journals Reviewed</span>
+                </div>
+                <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" class="btn-primary"
+                    target="_blank" rel="noopener">View Google Scholar →</a>
+            </div>
+            <div class="timeline">
+                <div class="timeline-track"></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year">2023–Present</span>
+                        <h3>Staff Scientist, LANL</h3>
+                        <p>Leading research on quantum advantage for quantum chemistry, materials informatics, and
+                            virtual characterization at the Theoretical Division.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year">2022–2023</span>
+                        <h3>Director's Postdoc Fellow, LANL</h3>
+                        <p>Interface characterization using virtual diffraction and physics-informed machine learning.
+                            Awarded the prestigious Director's Fellowship.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year">2019–2022</span>
+                        <h3>Postdoc & Research Scientist, UConn</h3>
+                        <p>Investigating the links between microstructure and atomic-scale behavior of metals under
+                            dynamic loading conditions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year">2019</span>
+                        <h3>Ph.D. Materials Science, IISc Bangalore</h3>
+                        <p>Dissertation: "Exploration of exfoliation, functionalization and properties of MXenes via
+                            first-principles and machine learning."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= SOFTWARE SECTION ============= -->
+    <section id="software" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04 / Software</span>
+                <h2>Open-Source Tools</h2>
+                <p class="section-subtitle">Codes and databases I've developed and contributed to</p>
+            </div>
+            <div class="software-grid">
+                <a href="https://anant.mrc.iisc.ac.in/" target="_blank" rel="noopener" class="software-card glass-card">
+                    <h3>aNANt</h3>
+                    <p>India's first computational materials database — 23,000+ MXenes with optimized structures and
+                        electronic properties.</p>
+                    <span class="software-tag">Database · Ph.D.</span>
+                </a>
+                <a href="https://virtex.readthedocs.io/" target="_blank" rel="noopener"
+                    class="software-card glass-card">
+                    <h3>VirTex</h3>
+                    <p>Python package for virtual texture analysis from atomistic microstructures: orientation
+                        relationships, misorientations, Schmid factors.</p>
+                    <span class="software-tag">Python · Analysis</span>
+                </a>
+                <a href="https://github.com/usnistgov/jarvis_leaderboard" target="_blank" rel="noopener"
+                    class="software-card glass-card">
+                    <h3>JARVIS-Leaderboard</h3>
+                    <p>Official contributor to NIST's benchmarking platform for materials science methods and machine
+                        learning models.</p>
+                    <span class="software-tag">NIST · Benchmarking</span>
+                </a>
+                <a href="https://github.com/lanl/ursa" target="_blank" rel="noopener" class="software-card glass-card">
+                    <h3>URSA</h3>
+                    <p>Contributor to LANL's Universal Research and Scientific Agent — an AI-powered research assistant.
+                    </p>
+                    <span class="software-tag">LANL · AI Agent</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= GROUP SECTION ============= -->
+    <section id="group" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05 / Team</span>
+                <h2>Research Group</h2>
+            </div>
+            <div class="group-grid">
+                <div class="group-card glass-card pi-card">
+                    <div class="group-avatar pi-avatar">AM</div>
+                    <div class="group-info">
+                        <h3>Avanish Mishra</h3>
+                        <span class="group-role">Principal Investigator</span>
+                        <p>Staff Scientist, Theoretical Division, LANL</p>
+                    </div>
+                </div>
+                <div class="group-card glass-card">
+                    <div class="group-avatar">AD</div>
+                    <div class="group-info">
+                        <h3>Arindam Debanath</h3>
+                        <span class="group-role">Postdoctoral Researcher</span>
+                    </div>
+                </div>
+                <div class="group-card glass-card">
+                    <div class="group-avatar">JW</div>
+                    <div class="group-info">
+                        <h3>Jacob Z. Williams</h3>
+                        <span class="group-role">Postdoctoral Researcher</span>
+                        <p>Co-advised with Dr. Yu Zhang, LANL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= OPENINGS SECTION ============= -->
+    <section id="openings" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06 / Join Us</span>
+                <h2>Open Positions</h2>
+                <p class="section-subtitle">We are actively recruiting at multiple levels</p>
+            </div>
+            <div class="openings-grid">
+                <div class="opening-card glass-card">
+                    <div class="opening-level">Postdoctoral</div>
+                    <h3>Postdoc Fellowships</h3>
+                    <ul>
+                        <li>Director's Postdoc Fellow & Distinguished Fellowships</li>
+                        <li>CNLS (Center for Nonlinear Studies) fellowships for exceptional candidates</li>
+                        <li>Oppenheimer postdoctoral fellowships for outstanding applicants</li>
+                    </ul>
+                    <p class="opening-note">Send your CV and a brief statement of research interests.</p>
+                </div>
+                <div class="opening-card glass-card">
+                    <div class="opening-level">Graduate</div>
+                    <h3>Graduate Positions</h3>
+                    <ul>
+                        <li><a href="https://science.osti.gov/wdts/scgsr" target="_blank" rel="noopener">DOE SCGSR
+                                Program</a></li>
+                        <li>NNSA Lab Residency Graduate Fellowship (LRGF)</li>
+                        <li>Summer Schools</li>
+                    </ul>
+                </div>
+                <div class="opening-card glass-card">
+                    <div class="opening-level">Undergraduate</div>
+                    <h3>Undergraduate Internships</h3>
+                    <ul>
+                        <li><a href="https://science.osti.gov/wdts/suli" target="_blank" rel="noopener">DOE SULI
+                                Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="openings-disclaimer">Open to Non-sensitive Foreign Nationals, Permanent Residents, and US
+                Citizens.</p>
+        </div>
+    </section>
+
+    <!-- ============= CONTACT SECTION ============= -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07 / Contact</span>
+                <h2>Let's Connect</h2>
+                <p class="section-subtitle">Interested in collaboration, openings, or just want to chat about quantum
+                    materials?</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://github.com/mavanish" target="_blank" rel="noopener" class="contact-card glass-card">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <h3>GitHub</h3>
+                    <span>@mavanish</span>
+                </a>
+                <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank" rel="noopener"
+                    class="contact-card glass-card">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                    </svg>
+                    <h3>Google Scholar</h3>
+                    <span>2,330+ citations</span>
+                </a>
+                <a href="https://orcid.org/0000-0003-3997-0445" target="_blank" rel="noopener"
+                    class="contact-card glass-card">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-1.209-.659-3.722-3.853-3.722h-2.466z" />
+                    </svg>
+                    <h3>ORCID</h3>
+                    <span>0000-0003-3997-0445</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= FOOTER ============= -->
+    <footer>
+        <div class="container footer-inner">
+            <span>© 2025 Avanish Mishra · Theoretical Division, LANL</span>
+            <span class="footer-made">Built with ☕ and quantum bits</span>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
