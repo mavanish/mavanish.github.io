@@ -1,9 +1,9 @@
 /* ========================================
-   FUTURISTIC WEBSITE — JAVASCRIPT
-   Particles · Scroll Reveal · Counters
+   AI-FOCUSED LIGHT THEME — JAVASCRIPT
+   Neural Particles · Scroll Reveal · Counters
    ======================================== */
 
-// ---------- PARTICLE SYSTEM ----------
+// ---------- PARTICLE SYSTEM (Light Theme - Neural Network) ----------
 (function initParticles() {
   const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;
@@ -25,17 +25,16 @@
   function Particle() {
     this.x = Math.random() * w;
     this.y = Math.random() * h;
-    this.vx = (Math.random() - 0.5) * 0.4;
-    this.vy = (Math.random() - 0.5) * 0.4;
-    this.radius = Math.random() * 1.8 + 0.4;
-    this.opacity = Math.random() * 0.5 + 0.15;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.radius = Math.random() * 2 + 0.5;
+    this.opacity = Math.random() * 0.3 + 0.1;
   }
 
   function createParticles() {
-    // scale count with screen size
-    var count = Math.floor((w * h) / 12000);
-    count = Math.min(count, 180);
-    count = Math.max(count, 40);
+    var count = Math.floor((w * h) / 14000);
+    count = Math.min(count, 150);
+    count = Math.max(count, 35);
     particles = [];
     for (var i = 0; i < count; i++) {
       particles.push(new Particle());
@@ -43,10 +42,10 @@
   }
 
   function drawLine(p1, p2, dist) {
-    var maxDist = 140;
+    var maxDist = 150;
     if (dist > maxDist) return;
-    var alpha = (1 - dist / maxDist) * 0.15;
-    ctx.strokeStyle = 'rgba(0,229,255,' + alpha + ')';
+    var alpha = (1 - dist / maxDist) * 0.12;
+    ctx.strokeStyle = 'rgba(0,102,255,' + alpha + ')';
     ctx.lineWidth = 0.6;
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
@@ -65,8 +64,8 @@
       var dy = p.y - mouse.y;
       var dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < 120) {
-        p.x += dx * 0.015;
-        p.y += dy * 0.015;
+        p.x += dx * 0.012;
+        p.y += dy * 0.012;
       }
 
       p.x += p.vx;
@@ -79,10 +78,10 @@
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0,229,255,' + p.opacity + ')';
+      ctx.fillStyle = 'rgba(0,102,255,' + p.opacity + ')';
       ctx.fill();
 
-      // connections
+      // connections (neural network look)
       for (var j = i + 1; j < particles.length; j++) {
         var p2 = particles[j];
         var ddx = p.x - p2.x;
@@ -145,10 +144,9 @@
 
 // ---------- SCROLL REVEAL ----------
 (function initReveal() {
-  // Add reveal class to all sections and major elements
   var targets = document.querySelectorAll(
     '.section-header, .about-grid, .research-card, .impact-banner, .timeline-item, ' +
-    '.software-card, .group-card, .opening-card, .contact-card'
+    '.software-card, .group-card, .opening-card, .contact-card, .ai-method-banner'
   );
   targets.forEach(function (el) {
     el.classList.add('reveal');
@@ -248,9 +246,9 @@
       var y = e.clientY - rect.top;
       var cx = rect.width / 2;
       var cy = rect.height / 2;
-      var rotateX = ((y - cy) / cy) * -4;
-      var rotateY = ((x - cx) / cx) * 4;
-      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+      var rotateX = ((y - cy) / cy) * -3;
+      var rotateY = ((x - cx) / cx) * 3;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-5px)';
     });
 
     card.addEventListener('mouseleave', function () {
