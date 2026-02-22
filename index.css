@@ -1544,6 +1544,7 @@ footer {
         flex-direction: column;
         text-align: center;
         padding-top: 8rem;
+        padding-bottom: 3rem;
     }
 
     .hero-content {
@@ -1570,6 +1571,11 @@ footer {
     .hero-tagline {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Hide scroll indicator on mobile to prevent overlap with social icons */
+    .scroll-indicator {
+        display: none;
     }
 
     .quantum-orb {
@@ -1640,6 +1646,19 @@ footer {
     .join-perks {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Research grid: 2 columns on tablet instead of 6 */
+    .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .research-grid .research-card:nth-child(1),
+    .research-grid .research-card:nth-child(2),
+    .research-grid .research-card:nth-child(3),
+    .research-grid .research-card:nth-child(4),
+    .research-grid .research-card:nth-child(5) {
+        grid-column: auto;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1652,8 +1671,17 @@ footer {
         gap: 0.75rem;
     }
 
+    /* Single column for research cards on phone */
     .research-grid {
         grid-template-columns: 1fr;
+    }
+
+    .research-grid .research-card:nth-child(1),
+    .research-grid .research-card:nth-child(2),
+    .research-grid .research-card:nth-child(3),
+    .research-grid .research-card:nth-child(4),
+    .research-grid .research-card:nth-child(5) {
+        grid-column: auto;
     }
 
     .container {
@@ -1666,6 +1694,11 @@ footer {
     }
 
     .join-perks {
+        grid-template-columns: 1fr;
+    }
+
+    /* About highlights: single column on phone */
+    .about-highlights {
         grid-template-columns: 1fr;
     }
 }
