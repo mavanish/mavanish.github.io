@@ -12,10 +12,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css?v=20260616" />
 </head>
 
-<body>
+<body class="page-mode">
 
     <!-- ============= PARTICLE CANVAS ============= -->
     <canvas id="particleCanvas"></canvas>
@@ -125,7 +125,7 @@
             </div>
         </div><!-- /hero-bottom -->
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <span>Pages</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -153,8 +153,8 @@
                         materials discovery.
                     </p>
                     <p>I have contributed to <strong>open data infrastructure</strong> (aNANt database,
-                        JARVIS-Leaderboard, URSA) and authored <strong>37+ peer-reviewed publications</strong>
-                        with <strong>2,330+ citations</strong> and an <strong>h-index of 17</strong>.</p>
+                        JARVIS-Leaderboard, URSA) and authored <strong>38+ peer-reviewed publications</strong>
+                        with <strong>2,538+ citations</strong> and an <strong>h-index of 19</strong>.</p>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-card">
@@ -186,6 +186,51 @@
                 </div>
 
             </div>
+            <div class="career-path">
+                <div class="section-header compact-header">
+                    <span class="section-tag">Career Path</span>
+                    <h2>Research Journey</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-track"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-year">2023-Present</span>
+                            <h3>Staff Scientist 2, Theoretical Division, LANL</h3>
+                            <p>Leading research in materials informatics, quantum computing for chemistry, generative AI
+                                for process-structure mapping, and virtual characterization tools.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-year">2022-2023</span>
+                            <h3>Director's Postdoc Fellow, LANL</h3>
+                            <p>Developed physics-informed ML for grain boundary property prediction using strain
+                                functional descriptors. Selected as one of 30 postdocs for "Science in 3" at LANL.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-year">2019-2022</span>
+                            <h3>Postdoc Fellow & Research Scientist, UConn</h3>
+                            <p>Pioneered virtual characterization tools for shock-induced deformations, phase
+                                transformation mechanisms, and diffraction fingerprinting in dynamic loading.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-year">2019</span>
+                            <h3>Ph.D. Materials Science, IISc Bangalore</h3>
+                            <p>Dissertation: "Exploration of exfoliation, functionalization and properties of MXenes via
+                                first-principles and machine learning."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -197,7 +242,7 @@
                 <h2>Mat-IQ: Materials Intelligence &amp; Quantum Lab</h2>
                 <p class="section-subtitle">Our interdisciplinary team at Los Alamos National Laboratory</p>
             </div>
-            <div class="group-grid">
+            <div class="group-grid pi-grid">
                 <div class="group-card glass-card pi-card">
                     <div class="group-avatar pi-avatar">AM</div>
                     <div class="group-info">
@@ -206,19 +251,50 @@
                         <p>Staff Scientist, Theoretical Division, LANL</p>
                     </div>
                 </div>
-                <div class="group-card glass-card">
-                    <div class="group-avatar">AD</div>
-                    <div class="group-info">
-                        <h3>Arindam Debanath</h3>
-                        <span class="group-role">Postdoctoral Researcher</span>
+            </div>
+            <div class="member-section postdoc-section">
+                <h3>Postdocs</h3>
+                <div class="group-grid member-grid">
+                    <div class="group-card glass-card">
+                        <div class="group-avatar">AD</div>
+                        <div class="group-info">
+                            <h3>Arindam Debanath</h3>
+                            <span class="group-role">Postdoctoral Researcher</span>
+                            <p class="stay-date">04/2026 - present</p>
+                        </div>
+                    </div>
+                    <div class="group-card glass-card">
+                        <div class="group-avatar">JW</div>
+                        <div class="group-info">
+                            <h3>Jacob Z. Williams</h3>
+                            <span class="group-role">Postdoctoral Researcher</span>
+                            <p class="stay-date">08/2025 - present</p>
+                            <p>Co-advised with Dr. Yu Zhang, LANL</p>
+                        </div>
                     </div>
                 </div>
-                <div class="group-card glass-card">
-                    <div class="group-avatar">JW</div>
-                    <div class="group-info">
-                        <h3>Jacob Z. Williams</h3>
-                        <span class="group-role">Postdoctoral Researcher</span>
-                        <p>Co-advised with Dr. Yu Zhang, LANL</p>
+            </div>
+            <div class="member-section student-section">
+                <h3>Students</h3>
+                <div class="group-grid member-grid">
+                    <div class="group-card glass-card student-card">
+                        <div class="group-avatar student-avatar">AA</div>
+                        <div class="group-info">
+                            <h3>Ashwin Ajit</h3>
+                            <span class="group-role">Summer Student</span>
+                            <p class="stay-date">06/2026 - present</p>
+                            <p>Carnegie Mellon University</p>
+                            <p>Co-advised with Dr. Saryu Fensin, LANL</p>
+                        </div>
+                    </div>
+                    <div class="group-card glass-card student-card">
+                        <div class="group-avatar student-avatar">KT</div>
+                        <div class="group-info">
+                            <h3>Kaya Tacer</h3>
+                            <span class="group-role">Summer Student</span>
+                            <p class="stay-date">06/2026 - present</p>
+                            <p>Purdue University</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -473,15 +549,15 @@
             </div>
             <div class="impact-banner">
                 <div class="impact-stat">
-                    <span class="big-number" id="citations-impact">2,330+</span>
+                    <span class="big-number" id="citations-impact">2,538+</span>
                     <span>Total Citations</span>
                 </div>
                 <div class="impact-stat">
-                    <span class="big-number">37+</span>
+                    <span class="big-number">38+</span>
                     <span>Publications</span>
                 </div>
                 <div class="impact-stat">
-                    <span class="big-number">17</span>
+                    <span class="big-number">19</span>
                     <span>h-index</span>
                 </div>
                 <div class="impact-stat">
@@ -491,43 +567,85 @@
                 <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" class="btn-primary"
                     target="_blank" rel="noopener">View Google Scholar →</a>
             </div>
-            <div class="timeline">
-                <div class="timeline-track"></div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-year">2023–Present</span>
-                        <h3>Staff Scientist 2, Theoretical Division, LANL</h3>
-                        <p>Leading research in materials informatics, quantum computing for chemistry, generative AI
-                            for process–structure mapping, and virtual characterization tools.</p>
+            <div class="publication-panel glass-card">
+                <div class="publication-toolbar">
+                    <div>
+                        <span class="section-tag compact-tag">Selected Papers</span>
+                        <h3>Latest & Impactful Work</h3>
                     </div>
+                    <form id="publicationSearch" class="publication-search">
+                        <input id="publicationQuery" type="search" value="Avanish Mishra materials science"
+                            aria-label="Publication or DOI search" />
+                        <button type="submit" class="btn-secondary">DOI Search</button>
+                    </form>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-year">2022–2023</span>
-                        <h3>Director's Postdoc Fellow, LANL</h3>
-                        <p>Developed physics-informed ML for grain boundary property prediction using strain
-                            functional descriptors. Selected as one of 30 postdocs for "Science in 3" at LANL.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-year">2019–2022</span>
-                        <h3>Postdoc Fellow & Research Scientist, UConn</h3>
-                        <p>Pioneered virtual characterization tools for shock-induced deformations, phase
-                            transformation mechanisms, and diffraction fingerprinting in dynamic loading.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-year">2019</span>
-                        <h3>Ph.D. Materials Science, IISc Bangalore</h3>
-                        <p>Dissertation: "Exploration of exfoliation, functionalization and properties of MXenes via
-                            first-principles and machine learning."</p>
-                    </div>
+                <p id="publicationStatus" class="publication-status">Showing curated papers from CV. Use DOI Search for
+                    live Crossref lookup.</p>
+                <div id="publicationList" class="publication-list" aria-live="polite">
+                    <article class="publication-card">
+                        <span class="publication-year">2026</span>
+                        <h4>Phase field dislocation dynamics study of grain boundary-dislocation interactions</h4>
+                        <p>B. Murgas, A. Mishra, N. Mathew, and A. Hunter</p>
+                        <p>Journal of Applied Physics 139, 155101</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Phase+field+dislocation+dynamics+study+of+grain+boundary-dislocation+interactions+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                            <a href="https://arxiv.org/abs/2507.00303" target="_blank" rel="noopener">arXiv</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2026</span>
+                        <h4>Controlling Deformation in Al/Ti: How Interface Roughness and Rotation Drive Bimetal
+                            Mechanics</h4>
+                        <p>A. Mishra, J. S. Carpenter, and S. J. Fensin</p>
+                        <p>In press</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Controlling+Deformation+in+Al+Ti+Interface+Roughness+Rotation+Bimetal+Mechanics+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2025</span>
+                        <h4>Unveiling Process-Structure Mapping with Generative AI</h4>
+                        <p>A. Mishra, B. W. Hamilton, M. S. Nitol, N. Mathew, T. C. Germann, and S. J. Fensin</p>
+                        <p>ICCV Workshops, 3593-3602</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Unveiling+Process-Structure+Mapping+with+Generative+AI+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2025</span>
+                        <h4>Dislocation-Grain Boundary Interaction Dataset for FCC Cu</h4>
+                        <p>K. Dang, S. Suresh, A. Mishra, I. Chesser, N. Mathew, E. M. Kober, and S. J. Fensin</p>
+                        <p>Scientific Data 12, 955</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Dislocation-Grain+Boundary+Interaction+Dataset+for+FCC+Cu+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2024</span>
+                        <h4>Learning from metastable symmetric-tilt grain boundaries using physics-based descriptors
+                        </h4>
+                        <p>A. Mishra, S. Suresh, S. J. Fensin, E. M. Kober, and N. Mathew</p>
+                        <p>Physical Review Materials 8, 123605</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Learning+from+metastable+symmetric-tilt+grain+boundaries+using+physics-based+descriptors"
+                                target="_blank" rel="noopener">Scholar</a>
+                            <a href="https://arxiv.org/abs/2406.00204" target="_blank" rel="noopener">arXiv</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2018</span>
+                        <h4>Machine-Learning-Assisted Accurate Band Gap Predictions of Functionalized MXene</h4>
+                        <p>A. C. Rajan, A. Mishra, S. Satsangi, R. Vaish, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
+                        <p>Chemistry of Materials 30, 4031</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Machine-Learning-Assisted+Accurate+Band+Gap+Predictions+of+Functionalized+MXene"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -675,7 +793,7 @@
                             d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
                     </svg>
                     <h3>Google Scholar</h3>
-                    <span>2,330+ citations</span>
+                    <span>2,538+ citations</span>
                 </a>
                 <a href="https://orcid.org/0000-0003-3997-0445" target="_blank" rel="noopener"
                     class="contact-card glass-card">
@@ -701,12 +819,12 @@
     <!-- ============= FOOTER ============= -->
     <footer>
         <div class="container footer-inner">
-            <span>© 2025 Avanish Mishra</span>
-            <span class="footer-made">Built with ☕ and intelligent algorithms</span>
+            <span>© 2026 Avanish Mishra</span>
+            <span class="footer-made">Built with intelligent algorithms and coffee</span>
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="index.js?v=20260616"></script>
 </body>
 
 </html>
