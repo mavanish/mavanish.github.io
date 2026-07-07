@@ -154,7 +154,52 @@
     }).join('');
   }
 
-  window.MatIQContent = { loadJSON, renderPeople, renderResearch, renderPublications, renderSoftware, renderNews };
+
+  function openingItem(item) {
+    if (typeof item === 'string') {
+      return '<li>' + escapeHTML(item) + '</li>';
+    }
+    if (item && item.url) {
+      return '<li><a href="' + escapeHTML(item.url) + '" target="_blank" rel="noopener">' + escapeHTML(item.text || item.label || item.url) + '</a></li>';
+    }
+    return '<li>' + escapeHTML((item && (item.text || item.label)) || '') + '</li>';
+  }
+
+  function openingJob(job) {
+    const items = (job.items || []).map(openingItem).join('');
+    const button = job.buttonUrl ? '<a class="opening-link" href="' + escapeHTML(job.buttonUrl) + '">' + escapeHTML(job.buttonLabel || 'Learn more') + '</a>' : '';
+    return [
+      '<article class="opening-card glass-card">',
+      job.status ? '<div class="opening-status">' + escapeHTML(job.status) + '</div>' : '',
+      '<h3>' + escapeHTML(job.title) + '</h3>',
+      items ? '<ul>' + items + '</ul>' : '',
+      job.note ? '<p class="opening-note">' + escapeHTML(job.note) + '</p>' : '',
+      button,
+      '</article>'
+    ].join('');
+  }
+
+  function openingRow(section) {
+    const jobs = (section.jobs || []).map(openingJob).join('');
+    return [
+      '<div class="opening-row" id="opening-' + escapeHTML(section.id || section.category || '') + '">',
+      '<div class="opening-row-header">',
+      '<div class="opening-level">' + escapeHTML(section.category) + '</div>',
+      '<h3>' + escapeHTML(section.headline || section.category) + '</h3>',
+      section.description ? '<p>' + escapeHTML(section.description) + '</p>' : '',
+      '</div>',
+      '<div class="opening-row-jobs">' + jobs + '</div>',
+      '</div>'
+    ].join('');
+  }
+
+  function renderOpenings(items) {
+    const target = document.getElementById('openings-list-data');
+    if (!target || !items.length) return;
+    target.innerHTML = items.map(openingRow).join('');
+  }
+
+  window.MatIQContent = { loadJSON, renderPeople, renderResearch, renderPublications, renderSoftware, renderNews, renderOpenings };
 
   document.addEventListener('DOMContentLoaded', function () {
     Promise.allSettled([
@@ -162,7 +207,8 @@
       loadJSON('data/research.json').then(renderResearch),
       loadJSON('data/publications.json').then(renderPublications),
       loadJSON('data/software.json').then(renderSoftware),
-      loadJSON('data/news.json').then(renderNews)
+      loadJSON('data/news.json').then(renderNews),
+      loadJSON('data/openings.json').then(renderOpenings)
     ]).then(function () {
       document.dispatchEvent(new CustomEvent('matiq:content-ready'));
     });
