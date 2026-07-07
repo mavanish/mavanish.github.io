@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="index.css?v=20260707" />
+    <link rel="stylesheet" href="index.css?v=20260616" />
 </head>
 
 <body class="page-mode">
@@ -29,7 +29,6 @@
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
             <a href="#software">Software</a>
-            <a href="#news">News</a>
             <a href="#openings">Openings</a>
             <a href="#contact">Contact</a>
         </div>
@@ -45,7 +44,6 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#software">Software</a>
-        <a href="#news">News</a>
         <a href="#openings">Openings</a>
         <a href="#contact">Contact</a>
     </div>
@@ -102,7 +100,7 @@
                                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                     </a>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" aria-label="Google Scholar">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path
@@ -117,7 +115,19 @@
                     </a>
                 </div>
             </div>
+            <div class="hero-visual">
+                <div class="quantum-orb">
+                    <div class="orb-ring ring-1"></div>
+                    <div class="orb-ring ring-2"></div>
+                    <div class="orb-ring ring-3"></div>
+                    <div class="orb-core"></div>
+                </div>
+            </div>
         </div><!-- /hero-bottom -->
+        <div class="scroll-indicator">
+            <span>Pages</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
     <!-- ============= ABOUT SECTION ============= -->
@@ -232,7 +242,7 @@
                 <h2>Mat-IQ: Materials Intelligence &amp; Quantum Lab</h2>
                 <p class="section-subtitle">Our interdisciplinary team at Los Alamos National Laboratory</p>
             </div>
-            <div id="people-pi" class="group-grid pi-grid">
+            <div class="group-grid pi-grid">
                 <div class="group-card glass-card pi-card">
                     <div class="group-avatar pi-avatar">AM</div>
                     <div class="group-info">
@@ -244,7 +254,7 @@
             </div>
             <div class="member-section postdoc-section">
                 <h3>Postdocs</h3>
-                <div id="people-postdocs" class="group-grid member-grid">
+                <div class="group-grid member-grid">
                     <div class="group-card glass-card">
                         <div class="group-avatar">AD</div>
                         <div class="group-info">
@@ -275,7 +285,7 @@
             </div>
             <div class="member-section student-section">
                 <h3>Students</h3>
-                <div id="people-students" class="group-grid member-grid">
+                <div class="group-grid member-grid">
                     <div class="group-card glass-card student-card">
                         <div class="group-avatar student-avatar">AA</div>
                         <div class="group-info">
@@ -297,19 +307,6 @@
                     </div>
                 </div>
             </div>
-            <div class="member-section alumni-section">
-                <h3>Alumni</h3>
-                <div id="people-alumni" class="group-grid member-grid alumni-grid">
-                    <div class="group-card glass-card alumni-card">
-                        <div class="group-avatar alumni-avatar">—</div>
-                        <div class="group-info">
-                            <h3>Alumni will be added soon</h3>
-                            <span class="group-role">Former group members</span>
-                            <p>Please add names, roles, dates, and current positions in <code>data/people.json</code>.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -322,7 +319,7 @@
                 <p class="section-subtitle">Leveraging artificial intelligence, machine learning, and quantum computing
                     to solve the hardest problems in materials science</p>
             </div>
-            <div id="research-grid-data" class="research-grid">
+            <div class="research-grid">
                 <!-- Card 1: Materials Informatics (AI) — Emphasized -->
                 <div class="research-card" data-tilt data-modal="modal-ai">
                     <div class="card-glow"></div>
@@ -421,7 +418,6 @@
             </div>
 
             <!-- ===== RESEARCH MODALS ===== -->
-            <div id="research-modals-data">
             <div class="modal-overlay" id="modal-ai">
                 <div class="modal-content glass-card">
                     <button class="modal-close" aria-label="Close">&times;</button>
@@ -443,7 +439,7 @@
                     </ul>
                     <p>By building open datasets and scalable software, we enable the community to accelerate discovery
                         cycles and bridge the gap between computation and laboratory realization.</p>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" class="btn-primary">View Publications →</a>
                 </div>
             </div>
@@ -468,7 +464,7 @@
                     </ul>
                     <p>By integrating high-fidelity simulations with experimental data, we deliver design rules that
                         accelerate the deployment of durable materials for next-generation energy systems.</p>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" class="btn-primary">View Publications →</a>
                 </div>
             </div>
@@ -492,7 +488,7 @@
                     </ul>
                     <p>These insights guide collaborations with experimental partners to accelerate the transition of
                         functional materials from discovery to device integration.</p>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" class="btn-primary">View Publications →</a>
                 </div>
             </div>
@@ -519,7 +515,7 @@
                     <p>Through close collaboration with hardware providers and national laboratories, we test emerging
                         technologies on real devices and map the practical pathways toward scalable quantum materials
                         discovery.</p>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" class="btn-primary">View Publications →</a>
                 </div>
             </div>
@@ -545,10 +541,9 @@
                     </ul>
                     <p>These capabilities enable rapid feedback between simulation and experiment, closing the loop for
                         accelerated materials qualification and certification.</p>
-                    <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"
+                    <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank"
                         rel="noopener" class="btn-primary">View Publications →</a>
                 </div>
-            </div>
             </div>
         </div>
     </section>
@@ -559,10 +554,10 @@
             <div class="section-header">
                 <span class="section-tag">04 / Impact</span>
                 <h2>Publications & Impact</h2>
-                <p class="section-subtitle">Peer-reviewed publications, open datasets, and software contributions for AI-driven materials science</p>
+                <p class="section-subtitle">A selection of recent contributions to AI-driven materials science</p>
             </div>
-            <div class="impact-banner impact-metrics">
-                <div class="impact-stat citation-stat">
+            <div class="impact-banner">
+                <div class="impact-stat">
                     <span class="big-number" id="citations-impact">2,538+</span>
                     <span>Total Citations</span>
                 </div>
@@ -578,7 +573,7 @@
                     <span class="big-number">16</span>
                     <span>Journals Reviewed</span>
                 </div>
-                <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" class="btn-primary"
+                <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" class="btn-primary"
                     target="_blank" rel="noopener">View Google Scholar →</a>
             </div>
             <div class="publication-panel glass-card">
@@ -590,276 +585,75 @@
                     <form id="publicationSearch" class="publication-search">
                         <input id="publicationQuery" type="search" value="Avanish Mishra materials science"
                             aria-label="Publication or DOI search" />
-                        <button type="submit" class="btn-secondary">Crossref Search</button>
+                        <button type="submit" class="btn-secondary">DOI Search</button>
                     </form>
                 </div>
-                <p id="publicationStatus" class="publication-status">Showing curated papers from CV. Google Scholar is linked directly; live browser fetching from Scholar is not available.</p>
+                <p id="publicationStatus" class="publication-status">Showing curated papers from CV. Use DOI Search for
+                    live Crossref lookup.</p>
                 <div id="publicationList" class="publication-list" aria-live="polite">
-                    <article class="publication-card">
-                        <span class="publication-year">2026</span>
-                        <h4>Controlling Deformation in Al/Ti: How Interface Roughness and Rotation Drive Bimetal Mechanics</h4>
-                        <p>A. Mishra, J. S. Carpenter, and S. J. Fensin</p>
-                        <p>Physical Review Materials 10, 063602</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Controlling+Deformation+in+Al%2FTi%3A+How+Interface+Roughness+and+Rotation+Drive+Bimetal+Mechanics" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
                     <article class="publication-card">
                         <span class="publication-year">2026</span>
                         <h4>Phase field dislocation dynamics study of grain boundary-dislocation interactions</h4>
                         <p>B. Murgas, A. Mishra, N. Mathew, and A. Hunter</p>
                         <p>Journal of Applied Physics 139, 155101</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Phase+field+dislocation+dynamics+study+of+grain+boundary-dislocation+interactions" target="_blank" rel="noopener">Scholar</a><a href="https://arxiv.org/abs/2507.00303" target="_blank" rel="noopener">arXiv</a></div>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Phase+field+dislocation+dynamics+study+of+grain+boundary-dislocation+interactions+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                            <a href="https://arxiv.org/abs/2507.00303" target="_blank" rel="noopener">arXiv</a>
+                        </div>
+                    </article>
+                    <article class="publication-card">
+                        <span class="publication-year">2026</span>
+                        <h4>Controlling Deformation in Al/Ti: How Interface Roughness and Rotation Drive Bimetal
+                            Mechanics</h4>
+                        <p>A. Mishra, J. S. Carpenter, and S. J. Fensin</p>
+                        <p>In press</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Controlling+Deformation+in+Al+Ti+Interface+Roughness+Rotation+Bimetal+Mechanics+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
                     </article>
                     <article class="publication-card">
                         <span class="publication-year">2025</span>
-                        <h4>Influence of nanoscale interfaces on the dynamic deformation and spall failure of Cu–Fe alloy microstructures</h4>
-                        <p>P. Tsurkan, M. J. Echeverria, A. Mishra, and A. M. Dongare</p>
-                        <p>Journal of Applied Physics 138, 225902</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Influence+of+nanoscale+interfaces+on+the+dynamic+deformation+and+spall+failure+of+Cu-Fe+alloy+microstructures" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2025</span>
-                        <h4>Unveiling Process–Structure Mapping with Generative AI</h4>
+                        <h4>Unveiling Process-Structure Mapping with Generative AI</h4>
                         <p>A. Mishra, B. W. Hamilton, M. S. Nitol, N. Mathew, T. C. Germann, and S. J. Fensin</p>
-                        <p>Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, 3593–3602</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Unveiling+Process-Structure+Mapping+with+Generative+AI" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2025</span>
-                        <h4>Moment tensor potential and its application in the Ti-Al-V multi-component system</h4>
-                        <p>M. S. Nitol, A. Mishra, S. Xu, and S. J. Fensin</p>
-                        <p>Physical Review Materials 9, 063601</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Moment+tensor+potential+and+its+application+in+the+Ti-Al-V+multi-component+system" target="_blank" rel="noopener">Scholar</a></div>
+                        <p>ICCV Workshops, 3593-3602</p>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Unveiling+Process-Structure+Mapping+with+Generative+AI+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
                     </article>
                     <article class="publication-card">
                         <span class="publication-year">2025</span>
                         <h4>Dislocation-Grain Boundary Interaction Dataset for FCC Cu</h4>
                         <p>K. Dang, S. Suresh, A. Mishra, I. Chesser, N. Mathew, E. M. Kober, and S. J. Fensin</p>
                         <p>Scientific Data 12, 955</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Dislocation-Grain+Boundary+Interaction+Dataset+for+FCC+Cu" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2025</span>
-                        <h4>Substitutional doping of 2D transition metal dichalcogenides for device applications: Current status, challenges and prospects</h4>
-                        <p>R. Kumar, A. K. Shringi, H. J. Wood, S. Oturak, T. S. K. Sharma, R. Chaurasiya, A. Mishra, W. M. Choi, N. Y. Doumon, I. Daboc, M. Terrones, and F. Yan</p>
-                        <p>Materials Science and Engineering: R: Reports 163, 100946</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Substitutional+doping+of+2D+transition+metal+dichalcogenides+for+device+applications" target="_blank" rel="noopener">Scholar</a></div>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Dislocation-Grain+Boundary+Interaction+Dataset+for+FCC+Cu+Mishra"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
                     </article>
                     <article class="publication-card">
                         <span class="publication-year">2024</span>
-                        <h4>Learning from metastable symmetric-tilt grain boundaries using physics-based descriptors</h4>
+                        <h4>Learning from metastable symmetric-tilt grain boundaries using physics-based descriptors
+                        </h4>
                         <p>A. Mishra, S. Suresh, S. J. Fensin, E. M. Kober, and N. Mathew</p>
                         <p>Physical Review Materials 8, 123605</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Learning+from+metastable+symmetric-tilt+grain+boundaries+using+physics-based+descriptors" target="_blank" rel="noopener">Scholar</a><a href="https://arxiv.org/abs/2406.00204" target="_blank" rel="noopener">arXiv</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>The structure and migration of heavily irradiated grain boundaries and dislocations in Ni in the athermal limit</h4>
-                        <p>I. Chesser, P. M. Derlet, A. Mishra, S. Paguaga, N. Mathew, K. Q. Dang, B. P. Uberuaga, A. Hunter, and S. Fensin</p>
-                        <p>Physical Review Materials 8, 093606</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=The+structure+and+migration+of+heavily+irradiated+grain+boundaries+and+dislocations+in+Ni+in+the+athermal+limit" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>Potential Applications of Quantum Computing at Los Alamos National Laboratory</h4>
-                        <p>A. Bärtschi, F. Caravelli, C. Coffrin, J. Colina, S. Eidenbenz, A. Jayakumar, S. Lawrence, M. Lee, A. Y. Lokhov, A. Mishra, S. Misra, Z. Morrell, Z. Mughal, D. Neill, A. Piryatinski, A. Scheie, M. Vuffray, and Y. Zhang</p>
-                        <p>arXiv preprint</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Potential+Applications+of+Quantum+Computing+at+Los+Alamos+National+Laboratory" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>Direct measurement of the thermal expansion coefficient of epitaxial WSe2 by four-dimensional scanning transmission electron microscopy</h4>
-                        <p>T. M. Kucinski, R. Dhall, B. Savitzky, C. L. Ophus, R. Karkee, A. Mishra, E. Dervishi, J. H. Kang, C. Lee, J. Yoo, and M. T. Pettes</p>
-                        <p>ACS Nano 18, 27</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Direct+measurement+of+the+thermal+expansion+coefficient+of+epitaxial+WSe2+by+four-dimensional+STEM" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>Interplay between dislocation type and local structure in dislocation-twin boundary reactions in Cu</h4>
-                        <p>K. Dang, A. Mishra, S. Suresh, E. M. Kober, N. Mathew, and S. J. Fensin</p>
-                        <p>Physical Review Materials 8, 063604</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Interplay+between+dislocation+type+and+local+structure+in+dislocation-twin+boundary+reactions+in+Cu" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>Large Scale Benchmark of Materials Design Methods</h4>
-                        <p>K. Choudhary et al.</p>
-                        <p>npj Computational Materials 10, 93</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Large+Scale+Benchmark+of+Materials+Design+Methods" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2024</span>
-                        <h4>Data-driven search for promising intercalating ions and layered materials for metal-ion batteries</h4>
-                        <p>S. Parida, A. Mishra, Q. Yang, A. Dobley, C. B. Carter, and A. M. Dongare</p>
-                        <p>Journal of Materials Science 59, 932</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Data-driven+search+for+promising+intercalating+ions+and+layered+materials+for+metal-ion+batteries" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2023</span>
-                        <h4>Role of Microscopic Degrees of Freedom on Nanopillar Compression of Bicrystal Cu</h4>
-                        <p>A. Mishra, K. Dang, E. M. Kober, S. J. Fensin, and N. Mathew</p>
-                        <p>Materials Research Letters 11, 872</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Role+of+Microscopic+Degrees+of+Freedom+on+Nanopillar+Compression+of+Bicrystal+Cu" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2023</span>
-                        <h4>Interface Microstructure Effects on Dynamic Failure Behavior of Layered Cu/Ta Microstructures</h4>
-                        <p>R. Kumar, J. Chen, A. Mishra, and A. M. Dongare</p>
-                        <p>Scientific Reports 13, 11365</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Interface+Microstructure+Effects+on+Dynamic+Failure+Behavior+of+Layered+Cu%2FTa+Microstructures" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2023</span>
-                        <h4>Modeling Shock-induced Void Collapse in Single-crystal Ta Systems at the Mesoscales</h4>
-                        <p>S. Galitskiy, A. Mishra, and A. M. Dongare</p>
-                        <p>International Journal of Plasticity 164, 103596</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Modeling+Shock-induced+Void+Collapse+in+Single-crystal+Ta+Systems+at+the+Mesoscales" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2023</span>
-                        <h4>Modeling Laser Interactions with Aluminum and Tantalum Targets using a Hybrid Atomistic-Continuum Model</h4>
-                        <p>C. Ching, S. Galitskiy, A. Mishra, and A. M. Dongare</p>
-                        <p>Journal of Applied Physics 133, 105901</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Modeling+Laser+Interactions+with+Aluminum+and+Tantalum+Targets+using+a+Hybrid+Atomistic-Continuum+Model" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2022</span>
-                        <h4>Virtual Diffraction Simulations using the Quasi-Coarse-Grained Dynamics Method to Understand and Interpret Plasticity Contributions during In Situ Shock Experiments</h4>
-                        <p>A. Mishra, K. Ma, and A. M. Dongare</p>
-                        <p>Journal of Materials Science 57, 12782</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Virtual+Diffraction+Simulations+using+the+Quasi-Coarse-Grained+Dynamics+Method" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2022</span>
-                        <h4>Virtual Texture Analysis to Investigate the Deformation Mechanisms in Metal Microstructures at the Atomic-Scale</h4>
-                        <p>A. Mishra, M. J. Echeverria, K. Ma, S. Parida, C. Chen, S. Galitskiy, and A. M. Dongare</p>
-                        <p>Journal of Materials Science 57, 10549</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Virtual+Texture+Analysis+to+Investigate+the+Deformation+Mechanisms+in+Metal+Microstructures+at+the+Atomic-Scale" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2022</span>
-                        <h4>Feature Blending: An Approach Towards Unified Machine Learning Models for Band Gap Prediction</h4>
-                        <p>S. Satsangi, A. Mishra, and A. K. Singh</p>
-                        <p>ACS Physical Chemistry Au 2, 16</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Feature+Blending+An+Approach+Towards+Unified+Machine+Learning+Models+for+Band+Gap+Prediction" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2021</span>
-                        <h4>Understanding the Phase Transformation Mechanisms that affect the Dynamic Response of Fe-based Microstructures at the Atomic Scales</h4>
-                        <p>A. Mishra, J. Lind, M. Kumar, and A. M. Dongare</p>
-                        <p>Journal of Applied Physics 130, 215902</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Understanding+the+Phase+Transformation+Mechanisms+that+affect+the+Dynamic+Response+of+Fe-based+Microstructures" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2021</span>
-                        <h4>Modeling the Evolution of Microstructure during Laser Shock Loading and Spall Failure of Cu Microstructures at the Atomic Scales</h4>
-                        <p>M. J. Echeverria, S. Galitskiy, A. Mishra, and A. M. Dongare</p>
-                        <p>Computational Materials Science 198, 110668</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Modeling+the+Evolution+of+Microstructure+during+Laser+Shock+Loading+and+Spall+Failure+of+Cu+Microstructures" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2021</span>
-                        <h4>Fingerprinting Shock-induced Deformations via Diffraction</h4>
-                        <p>A. Mishra, C. Kunka, M. J. Echeverria, R. Dingreville, and A. M. Dongare</p>
-                        <p>Scientific Reports 11, 9872</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Fingerprinting+Shock-induced+Deformations+via+Diffraction" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2021</span>
-                        <h4>Origin of High Interfacial Resistance in Solid-State Batteries: LLTO/LCO Half-cells</h4>
-                        <p>P. Xu, W. Rheinheimer, A. Mishra, S. N. Shuvo, Z. Qi, H. Wang, A. M. Dongare, and L. A. Stanciu</p>
-                        <p>ChemElectroChem 8, 1847</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Origin+of+High+Interfacial+Resistance+in+Solid-State+Batteries+LLTO+LCO+Half-cells" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2020</span>
-                        <h4>Sulfur-doped Titanium Carbide MXenes for Room Temperature Gas Sensing</h4>
-                        <p>S. N. Shuvo, A. M. U. Gomez, A. Mishra, W. Y. Chen, A. M. Dongare, and L. A. Stanciu</p>
-                        <p>ACS Sensors 5, 2915</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Sulfur-doped+Titanium+Carbide+MXenes+for+Room+Temperature+Gas+Sensing" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2020</span>
-                        <h4>Vertically Stacked 2H-1T Dual-phase MoS2 Microstructures During Lithium Intercalation: A first Principles Study</h4>
-                        <p>S. Parida, A. Mishra, J. Chen, J. Wang, C. B. Carter, and A. M. Dongare</p>
-                        <p>Journal of the American Ceramic Society 103, 6603</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Vertically+Stacked+2H-1T+Dual-phase+MoS2+Microstructures+During+Lithium+Intercalation" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2020</span>
-                        <h4>Ultralow Thermal Conductivity and Anomalously High Thermoelectric Figure of Merit in Ternary In5X5Br (X = S, and Se) Compounds</h4>
-                        <p>T. Pandey, A. Nissimagoudar, A. Mishra, and A. K. Singh</p>
-                        <p>Journal of Materials Chemistry A 8, 13812</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Ultralow+Thermal+Conductivity+and+Anomalously+High+Thermoelectric+Figure+of+Merit+in+Ternary+In5X5Br" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2019</span>
-                        <h4>Structure-Dependent Electrical and Magnetic Properties of Iron Oxide Composites</h4>
-                        <p>N. Lertcumfu, F. N. Sayed, S. N. Shirodkar, S. Radhakrishnana, A. Mishra, G. Rujijanagul, A. K. Singh, B. I. Yakobson, C. S. Tiwary, and P. M. Ajayan</p>
-                        <p>Physica Status Solidi A 1801004</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Structure-Dependent+Electrical+and+Magnetic+Properties+of+Iron+Oxide+Composites" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2019</span>
-                        <h4>Magnetism in Two-Dimensional Materials Beyond Graphene</h4>
-                        <p>N. Sethulakshmi, A. Mishra, P. M. Ajayan, Y. Kawazoe, A. Roy, A. K. Singh, and C. S. Tiwary</p>
-                        <p>Materials Today 27, 107</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Magnetism+in+Two-Dimensional+Materials+Beyond+Graphene" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2019</span>
-                        <h4>Recent Advances in MXenes: From Fundamentals to Applications</h4>
-                        <p>M. Khazaei, A. Mishra, N. S. Venkataramanan, A. K. Singh, and S. Yunoki</p>
-                        <p>Current Opinion in Solid State and Materials Science 23, 164</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Recent+Advances+in+MXenes+From+Fundamentals+to+Applications" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2019</span>
-                        <h4>Accelerated Data-Driven Accurate Positioning of the Band-Edges of MXenes</h4>
-                        <p>A. Mishra, S. Satsangi, A. C. Rajan, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
-                        <p>Journal of Physical Chemistry Letters 10, 780</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Accelerated+Data-Driven+Accurate+Positioning+of+the+Band-Edges+of+MXenes" target="_blank" rel="noopener">Scholar</a></div>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Learning+from+metastable+symmetric-tilt+grain+boundaries+using+physics-based+descriptors"
+                                target="_blank" rel="noopener">Scholar</a>
+                            <a href="https://arxiv.org/abs/2406.00204" target="_blank" rel="noopener">arXiv</a>
+                        </div>
                     </article>
                     <article class="publication-card">
                         <span class="publication-year">2018</span>
                         <h4>Machine-Learning-Assisted Accurate Band Gap Predictions of Functionalized MXene</h4>
                         <p>A. C. Rajan, A. Mishra, S. Satsangi, R. Vaish, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
                         <p>Chemistry of Materials 30, 4031</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Machine-Learning-Assisted+Accurate+Band+Gap+Predictions+of+Functionalized+MXene" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2018</span>
-                        <h4>Origami-Inspired 3D Interconnected Molybdenum Carbide Nanoflakes</h4>
-                        <p>R. Koizumi, S. Ozden, A. Samanta, A. P. P. Alves, A. Mishra, G. Ye, G. G. Silva, R. Vajtai, A. K. Singh, C. S. Tiwary, and P. M. Ajayan</p>
-                        <p>Advanced Materials Interfaces 5, 1701113</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Origami-Inspired+3D+Interconnected+Molybdenum+Carbide+Nanoflakes" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2017</span>
-                        <h4>Ferroelectricity, Antiferroelectricity, and Ultrathin 2D Electron/Hole Gas in Multifunctional Monolayer MXene</h4>
-                        <p>A. Chandrasekaran, A. Mishra, and A. K. Singh</p>
-                        <p>Nano Letters 17, 3290</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Ferroelectricity+Antiferroelectricity+and+Ultrathin+2D+Electron+Hole+Gas+in+Multifunctional+Monolayer+MXene" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2017</span>
-                        <h4>Atomistic Origin of Phase Stability in Oxygen Functionalized MXene: A Comparative Study</h4>
-                        <p>A. Mishra, P. Srivastava, A. Carreras, I. Tanaka, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
-                        <p>Journal of Physical Chemistry C 121, 18947</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Atomistic+Origin+of+Phase+Stability+in+Oxygen+Functionalized+MXene+A+Comparative+Study" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2016</span>
-                        <h4>Mechanistic Insight into the Chemical Exfoliation and Functionalization of Ti3C2 MXene</h4>
-                        <p>P. Srivastava, A. Mishra, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
-                        <p>ACS Applied Materials &amp; Interfaces 8, 24256</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Mechanistic+Insight+into+the+Chemical+Exfoliation+and+Functionalization+of+Ti3C2+MXene" target="_blank" rel="noopener">Scholar</a></div>
-                    </article>
-                    <article class="publication-card">
-                        <span class="publication-year">2016</span>
-                        <h4>Isolation of pristine MXene from Nb4AlC3 MAX phase: A first-principles Study</h4>
-                        <p>A. Mishra, P. Srivastava, H. Mizuseki, K.-R. Lee, and A. K. Singh</p>
-                        <p>Physical Chemistry Chemical Physics 18, 11073</p>
-                        <div class="publication-links"><a href="https://scholar.google.com/scholar?q=Isolation+of+pristine+MXene+from+Nb4AlC3+MAX+phase+A+first-principles+Study" target="_blank" rel="noopener">Scholar</a></div>
+                        <div class="publication-links">
+                            <a href="https://scholar.google.com/scholar?q=Machine-Learning-Assisted+Accurate+Band+Gap+Predictions+of+Functionalized+MXene"
+                                target="_blank" rel="noopener">Scholar</a>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -875,7 +669,7 @@
                 <p class="section-subtitle">Codes, databases, and AI-powered tools I've developed and contributed to
                 </p>
             </div>
-            <div id="software-grid-data" class="software-grid">
+            <div class="software-grid">
                 <a href="https://anant.mrc.iisc.ac.in/" target="_blank" rel="noopener" class="software-card glass-card">
                     <h3>aNANt</h3>
                     <p>India's first computational materials database — 23,000+ MXenes with optimized structures and
@@ -905,23 +699,11 @@
             </div>
         </div>
     </section>
-    <!-- ============= NEWS SECTION ============= -->
-    <section id="news" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">06 / Updates</span>
-                <h2>Latest News</h2>
-                <p class="section-subtitle">Coming soon.</p>
-            </div>
-            <div id="news-list-data" class="news-grid"></div>
-        </div>
-    </section>
-
     <!-- ============= OPENINGS SECTION ============= -->
     <section id="openings" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">07 / Join Us</span>
+                <span class="section-tag">06 / Join Us</span>
                 <h2>Shape the Future of Materials Science</h2>
                 <p class="section-subtitle">We are actively recruiting motivated researchers at all levels who are
                     passionate about AI, quantum computing, and materials science</p>
@@ -1013,7 +795,7 @@
                     <h3>GitHub</h3>
                     <span>@mavanish</span>
                 </a>
-                <a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener"
+                <a href="https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en" target="_blank" rel="noopener"
                     class="contact-card glass-card">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -1051,8 +833,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/content-renderer.js?v=20260707"></script>
-    <script src="index.js?v=20260707"></script>
+    <script src="index.js?v=20260616"></script>
 </body>
 
 </html>

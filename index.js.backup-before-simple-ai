@@ -143,7 +143,7 @@
 
 // ---------- HASH PAGE ROUTER ----------
 (function initPageRouter() {
-  var pageIds = ['hero', 'about', 'group', 'research', 'publications', 'software', 'news', 'openings', 'contact'];
+  var pageIds = ['hero', 'about', 'group', 'research', 'publications', 'software', 'openings', 'contact'];
   var pages = pageIds
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
@@ -266,11 +266,9 @@
 
 
 // ---------- TILT EFFECT ON RESEARCH CARDS ----------
-function initTilt() {
+(function initTilt() {
   var cards = document.querySelectorAll('[data-tilt]');
   cards.forEach(function (card) {
-    if (card.dataset.tiltReady === 'true') return;
-    card.dataset.tiltReady = 'true';
     card.addEventListener('mousemove', function (e) {
       var rect = card.getBoundingClientRect();
       var x = e.clientX - rect.left;
@@ -286,9 +284,7 @@ function initTilt() {
       card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
     });
   });
-}
-initTilt();
-document.addEventListener('matiq:content-ready', initTilt);
+})();
 
 
 // ---------- PUBLICATION DOI FETCHER ----------
@@ -299,11 +295,8 @@ document.addEventListener('matiq:content-ready', initTilt);
   var status = document.getElementById('publicationStatus');
   if (!form || !input || !list || !status) return;
 
-  var fallbackHTML = list.dataset.curatedHtml || list.innerHTML;
-  document.addEventListener('matiq:content-ready', function () {
-    fallbackHTML = list.dataset.curatedHtml || list.innerHTML;
-  });
-  var scholarProfile = 'https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate';
+  var fallbackHTML = list.innerHTML;
+  var scholarProfile = 'https://scholar.google.com/citations?user=_P6zuNAAAAAJ&hl=en';
 
   function text(value) {
     return String(value || '').replace(/[&<>"']/g, function (char) {
@@ -399,10 +392,10 @@ document.addEventListener('matiq:content-ready', initTilt);
       if (!filtered.length) throw new Error('No matching DOI records');
 
       list.innerHTML = filtered.slice(0, 6).map(cardHTML).join('');
-      status.textContent = 'Showing ' + Math.min(filtered.length, 6) + ' DOI-indexed records from Crossref. Google Scholar does not provide a public browser API; use the profile link for the complete list.';
+      status.textContent = 'Showing ' + Math.min(filtered.length, 6) + ' DOI-indexed records from Crossref.';
     } catch (error) {
       list.innerHTML = fallbackHTML;
-      status.textContent = 'Live DOI lookup unavailable. Showing curated papers from CV and linking to Google Scholar.';
+      status.textContent = 'Live DOI lookup unavailable. Showing curated papers from CV.';
     } finally {
       list.classList.remove('loading');
     }
@@ -416,13 +409,11 @@ document.addEventListener('matiq:content-ready', initTilt);
 
 
 // ---------- RESEARCH MODALS ----------
-function initModals() {
+(function initModals() {
   var cards = document.querySelectorAll('.research-card[data-modal]');
   var overlays = document.querySelectorAll('.modal-overlay');
 
   cards.forEach(function (card) {
-    if (card.dataset.modalReady === 'true') return;
-    card.dataset.modalReady = 'true';
     card.addEventListener('click', function () {
       var modalId = card.getAttribute('data-modal');
       var modal = document.getElementById(modalId);
@@ -433,9 +424,8 @@ function initModals() {
     });
   });
 
+  // Close buttons
   document.querySelectorAll('.modal-close').forEach(function (btn) {
-    if (btn.dataset.closeReady === 'true') return;
-    btn.dataset.closeReady = 'true';
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var overlay = btn.closest('.modal-overlay');
@@ -444,9 +434,8 @@ function initModals() {
     });
   });
 
+  // Click overlay background to close
   overlays.forEach(function (overlay) {
-    if (overlay.dataset.overlayReady === 'true') return;
-    overlay.dataset.overlayReady = 'true';
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) {
         overlay.classList.remove('open');
@@ -454,15 +443,11 @@ function initModals() {
       }
     });
   });
-}
-initModals();
-document.addEventListener('matiq:content-ready', initModals);
 
-// Escape key to close modals
-(function initModalEscape() {
+  // Escape key to close
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+      overlays.forEach(function (overlay) {
         overlay.classList.remove('open');
       });
       document.body.style.overflow = '';
