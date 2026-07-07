@@ -128,3 +128,34 @@ Backups of the original files were saved as:
 - `index.html.backup-before-simple-ai`
 - `index.css.backup-before-simple-ai`
 - `index.js.backup-before-simple-ai`
+
+
+## Openings / Jobs
+
+Edit open positions in:
+
+```text
+data/openings.json
+```
+
+The openings page is organized as three rows:
+
+- `postdoc`
+- `graduate`
+- `undergraduate`
+
+To add a new job, add another object inside the relevant row's `jobs` list:
+
+```json
+{
+  "title": "New Position Title",
+  "status": "Open",
+  "items": [
+    "Short requirement or topic",
+    { "text": "Application link", "url": "https://example.com" }
+  ],
+  "note": "Optional note for applicants.",
+  "buttonLabel": "Apply or contact",
+  "buttonUrl": "#contact"
+}
+```
