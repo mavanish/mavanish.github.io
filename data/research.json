@@ -1,0 +1,69 @@
+[
+  {
+    "id": "modal-ai",
+    "title": "Materials Informatics & AI",
+    "icon": "",
+    "iconSvg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"> <rect x=\"8\" y=\"8\" width=\"48\" height=\"48\" rx=\"4\" /> <rect x=\"18\" y=\"18\" width=\"12\" height=\"12\" rx=\"2\" /> <rect x=\"34\" y=\"18\" width=\"12\" height=\"12\" rx=\"2\" /> <rect x=\"18\" y=\"34\" width=\"12\" height=\"12\" rx=\"2\" /> <rect x=\"34\" y=\"34\" width=\"12\" height=\"12\" rx=\"2\" /> </svg>",
+    "summary": "Data-driven discovery fusing physics-based descriptors with ML models. Active learning, graph neural networks, and explainable AI for accelerated materials design.",
+    "tags": [
+      "ML/AI",
+      "Active Learning",
+      "GNNs",
+      "XAI",
+      "Transformers"
+    ],
+    "body": "<p>Materials informatics provides a data-driven lens for discovering compounds and microstructures with unprecedented performance. We develop algorithms that fuse physics-based descriptors with machine-learning models to predict properties, identify synthesis pathways, and quantify uncertainty.</p><h4>Key Thrusts</h4><ul><li><strong>Active learning workflows</strong> that adaptively explore vast chemical and structural spaces while minimizing expensive simulations and experiments.</li><li><strong>Graph and geometric deep learning</strong> approaches that capture symmetry, defects, and mesoscale features essential for accurate property predictions.</li><li><strong>Explainable AI frameworks</strong> that translate model predictions into actionable design rules for collaborators across materials domains.</li><li><strong>Large language models & AI agents</strong> for scientific literature mining, hypothesis generation, and automated research workflows.</li></ul><p>By building open datasets and scalable software, we enable the community to accelerate discovery cycles and bridge the gap between computation and laboratory realization.</p>"
+  },
+  {
+    "id": "modal-qc",
+    "title": "Quantum Computing for Materials",
+    "icon": "",
+    "iconSvg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"> <circle cx=\"32\" cy=\"32\" r=\"28\" /> <ellipse cx=\"32\" cy=\"32\" rx=\"12\" ry=\"28\" /> <line x1=\"4\" y1=\"32\" x2=\"60\" y2=\"32\" /> <line x1=\"32\" y1=\"4\" x2=\"32\" y2=\"60\" /> </svg>",
+    "summary": "Hybrid quantum–classical strategies for correlated materials. Variational algorithms, error mitigation, and domain-specific workflows for catalysis and energy storage.",
+    "tags": [
+      "VQE",
+      "Error Mitigation",
+      "Quantum Chemistry"
+    ],
+    "body": "<p>Quantum computing promises to transform the way we model correlated materials and chemical reactions. We investigate hybrid quantum–classical strategies that deliver verifiable speedups over classical approaches while remaining compatible with near-term hardware constraints.</p><h4>Key Thrusts</h4><ul><li><strong>Algorithm development:</strong> tailoring variational quantum algorithms for strongly correlated electrons, defect spectroscopy, and dynamical response calculations. </li><li><strong>Error mitigation and benchmarking:</strong> quantifying hardware noise, designing compact ansätze, and developing validation protocols that certify quantum advantage claims. </li><li><strong>Domain-specific workflows:</strong> integrating quantum solvers with classical simulations to tackle multiscale challenges in catalysis, energy storage, and quantum materials.</li></ul><p>Through close collaboration with hardware providers and national laboratories, we test emerging technologies on real devices and map the practical pathways toward scalable quantum materials discovery.</p>"
+  },
+  {
+    "id": "modal-structural",
+    "title": "Structural Materials",
+    "icon": "",
+    "iconSvg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"> <polygon points=\"32,4 60,52 4,52\" /> <circle cx=\"32\" cy=\"38\" r=\"8\" /> <line x1=\"32\" y1=\"18\" x2=\"32\" y2=\"28\" /> </svg>",
+    "summary": "Predictive models for extreme environments — fusion reactors, shock deformation, and radiation damage. Multiscale simulations from atoms to continuum.",
+    "tags": [
+      "Fusion",
+      "Shock Physics",
+      "Radiation"
+    ],
+    "body": "<p>Our group builds predictive models that explain how structural materials behave when subjected to extreme operating environments. We combine electronic-structure calculations, large-scale molecular dynamics, and mesoscale simulations to identify the atomistic mechanisms that control degradation pathways.</p><h4>Key Thrusts</h4><ul><li><strong>Fusion environments:</strong> quantifying plasma–material interactions, hydrogen retention, and neutron-driven embrittlement in candidate divertor and first-wall alloys. </li><li><strong>High-rate deformation:</strong> linking defect nucleation under shock loading to macroscopic strength through multiscale constitutive descriptions.</li><li><strong>Radiation damage tolerance:</strong> mapping cascade evolution and microstructural recovery to guide the design of alloys with improved radiation resistance.</li></ul><p>By integrating high-fidelity simulations with experimental data, we deliver design rules that accelerate the deployment of durable materials for next-generation energy systems.</p>"
+  },
+  {
+    "id": "modal-functional",
+    "title": "Functional Materials",
+    "icon": "",
+    "iconSvg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"> <path d=\"M32 4 L58 20 L58 44 L32 60 L6 44 L6 20 Z\" /> <path d=\"M32 20 L46 28 L46 40 L32 48 L18 40 L18 28 Z\" /> </svg>",
+    "summary": "Engineering materials from bulk to 2D — complex oxides, heterostructures, and hybrids for energy, electronics, and photonics.",
+    "tags": [
+      "2D Materials",
+      "MXenes",
+      "Energy"
+    ],
+    "body": "<p>We explore how functional materials can be engineered across length scales to enable transformative energy, sensing, and electronic technologies. Our simulations reveal how chemistry, defects, and interfaces collectively govern emergent properties in complex oxides, 2D heterostructures, and hybrid materials.</p><h4>Key Thrusts</h4><ul><li><strong>Energy conversion and storage:</strong> optimizing ion transport and stability in solid-state electrolytes and catalytic surfaces.</li><li><strong>Electronics and photonics:</strong> tailoring polarization, band alignment, and excitonic responses for low-power information processing.</li><li><strong>Coupled multifunctionality:</strong> designing materials that exhibit simultaneous mechanical, electronic, and thermal performance via interface engineering.</li></ul><p>These insights guide collaborations with experimental partners to accelerate the transition of functional materials from discovery to device integration.</p>"
+  },
+  {
+    "id": "modal-virtual",
+    "title": "Virtual Characterization",
+    "icon": "",
+    "iconSvg": "<svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"> <circle cx=\"32\" cy=\"32\" r=\"24\" /> <path d=\"M32 8 Q48 24 32 40 Q16 56 32 56\" /> <path d=\"M16 20 L48 20\" /> <path d=\"M12 32 L52 32\" /> <path d=\"M16 44 L48 44\" /> </svg>",
+    "summary": "Computational tools for texture analysis, diffraction simulation, and orientation relationships from atomistic data.",
+    "tags": [
+      "VirTex",
+      "Diffraction",
+      "Microstructure"
+    ],
+    "body": "<p>High-fidelity simulations routinely produce terabytes of atomistic configurations, yet extracting actionable knowledge remains challenging. We advance virtual characterization tools that translate raw atomic data into experimentally relevant observables and intuitive microstructural descriptors.</p><h4>Key Thrusts</h4><ul><li><strong>Diffraction and spectroscopy pipelines</strong> that compute X-ray, neutron, and electron signatures directly from atomistic snapshots for one-to-one comparison with measurements.</li><li><strong>Texture and microstructure analytics</strong> that quantify grain morphology, dislocation content, and interfacial statistics to reveal processing–structure–property relationships.</li><li><strong>Immersive visualization and XR frameworks</strong> that allow researchers to interrogate complex microstructures collaboratively in interactive environments.</li></ul><p>These capabilities enable rapid feedback between simulation and experiment, closing the loop for accelerated materials qualification and certification.</p>"
+  }
+]

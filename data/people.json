@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Avanish Mishra",
+    "role": "Principal Investigator",
+    "title": "Staff Scientist, Theoretical Division, LANL",
+    "section": "pi",
+    "initials": "AM",
+    "photo": "",
+    "details": [
+      "Mat-IQ: Materials Intelligence & Quantum Lab",
+      "Los Alamos National Laboratory"
+    ]
+  },
+  {
+    "name": "Arindam Debanath",
+    "role": "Postdoctoral Researcher",
+    "section": "postdoc",
+    "initials": "AD",
+    "photo": "",
+    "dates": "04/2026 - present"
+  },
+  {
+    "name": "Jacob Z. Williams",
+    "role": "Postdoctoral Researcher",
+    "section": "postdoc",
+    "initials": "JW",
+    "photo": "",
+    "dates": "08/2025 - present",
+    "details": [
+      "Co-advised with Dr. Yu Zhang, LANL"
+    ]
+  },
+  {
+    "name": "Adam J. Witmer",
+    "role": "Postdoctoral Researcher",
+    "section": "postdoc",
+    "initials": "AW",
+    "photo": "",
+    "dates": "02/2026 - present",
+    "details": [
+      "Co-advised with Dr. Tyler Reddy, LANL"
+    ]
+  },
+  {
+    "name": "Ashwin Ajit",
+    "role": "Summer Student",
+    "section": "student",
+    "initials": "AA",
+    "photo": "",
+    "dates": "06/2026 - present",
+    "details": [
+      "Carnegie Mellon University",
+      "Co-advised with Dr. Saryu Fensin, LANL"
+    ]
+  },
+  {
+    "name": "Kaya Tacer",
+    "role": "Summer Student",
+    "section": "student",
+    "initials": "KT",
+    "photo": "",
+    "dates": "06/2026 - present",
+    "details": [
+      "Purdue University"
+    ]
+  },
+  {
+    "name": "Alumni will be added soon",
+    "role": "Former group members",
+    "section": "alumni",
+    "initials": "—",
+    "photo": "",
+    "details": [
+      "Add alumni names, roles, dates, and current positions here when ready."
+    ]
+  }
+]

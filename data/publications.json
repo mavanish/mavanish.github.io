@@ -1,0 +1,466 @@
+[
+  {
+    "year": "2026",
+    "title": "Controlling Deformation in Al/Ti: How Interface Roughness and Rotation Drive Bimetal Mechanics",
+    "authors": "A. Mishra, J. S. Carpenter, and S. J. Fensin",
+    "venue": "Physical Review Materials 10, 063602",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Controlling+Deformation+in+Al%2FTi%3A+How+Interface+Roughness+and+Rotation+Drive+Bimetal+Mechanics"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "title": "Phase field dislocation dynamics study of grain boundary-dislocation interactions",
+    "authors": "B. Murgas, A. Mishra, N. Mathew, and A. Hunter",
+    "venue": "Journal of Applied Physics 139, 155101",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Phase+field+dislocation+dynamics+study+of+grain+boundary-dislocation+interactions"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2507.00303"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Influence of nanoscale interfaces on the dynamic deformation and spall failure of Cu–Fe alloy microstructures",
+    "authors": "P. Tsurkan, M. J. Echeverria, A. Mishra, and A. M. Dongare",
+    "venue": "Journal of Applied Physics 138, 225902",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Influence+of+nanoscale+interfaces+on+the+dynamic+deformation+and+spall+failure+of+Cu-Fe+alloy+microstructures"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Unveiling Process–Structure Mapping with Generative AI",
+    "authors": "A. Mishra, B. W. Hamilton, M. S. Nitol, N. Mathew, T. C. Germann, and S. J. Fensin",
+    "venue": "Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, 3593–3602",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Unveiling+Process-Structure+Mapping+with+Generative+AI"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Moment tensor potential and its application in the Ti-Al-V multi-component system",
+    "authors": "M. S. Nitol, A. Mishra, S. Xu, and S. J. Fensin",
+    "venue": "Physical Review Materials 9, 063601",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Moment+tensor+potential+and+its+application+in+the+Ti-Al-V+multi-component+system"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Dislocation-Grain Boundary Interaction Dataset for FCC Cu",
+    "authors": "K. Dang, S. Suresh, A. Mishra, I. Chesser, N. Mathew, E. M. Kober, and S. J. Fensin",
+    "venue": "Scientific Data 12, 955",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Dislocation-Grain+Boundary+Interaction+Dataset+for+FCC+Cu"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Substitutional doping of 2D transition metal dichalcogenides for device applications: Current status, challenges and prospects",
+    "authors": "R. Kumar, A. K. Shringi, H. J. Wood, S. Oturak, T. S. K. Sharma, R. Chaurasiya, A. Mishra, W. M. Choi, N. Y. Doumon, I. Daboc, M. Terrones, and F. Yan",
+    "venue": "Materials Science and Engineering: R: Reports 163, 100946",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Substitutional+doping+of+2D+transition+metal+dichalcogenides+for+device+applications"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Learning from metastable symmetric-tilt grain boundaries using physics-based descriptors",
+    "authors": "A. Mishra, S. Suresh, S. J. Fensin, E. M. Kober, and N. Mathew",
+    "venue": "Physical Review Materials 8, 123605",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Learning+from+metastable+symmetric-tilt+grain+boundaries+using+physics-based+descriptors"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2406.00204"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "The structure and migration of heavily irradiated grain boundaries and dislocations in Ni in the athermal limit",
+    "authors": "I. Chesser, P. M. Derlet, A. Mishra, S. Paguaga, N. Mathew, K. Q. Dang, B. P. Uberuaga, A. Hunter, and S. Fensin",
+    "venue": "Physical Review Materials 8, 093606",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=The+structure+and+migration+of+heavily+irradiated+grain+boundaries+and+dislocations+in+Ni+in+the+athermal+limit"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Potential Applications of Quantum Computing at Los Alamos National Laboratory",
+    "authors": "A. Bärtschi, F. Caravelli, C. Coffrin, J. Colina, S. Eidenbenz, A. Jayakumar, S. Lawrence, M. Lee, A. Y. Lokhov, A. Mishra, S. Misra, Z. Morrell, Z. Mughal, D. Neill, A. Piryatinski, A. Scheie, M. Vuffray, and Y. Zhang",
+    "venue": "arXiv preprint",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Potential+Applications+of+Quantum+Computing+at+Los+Alamos+National+Laboratory"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Direct measurement of the thermal expansion coefficient of epitaxial WSe2 by four-dimensional scanning transmission electron microscopy",
+    "authors": "T. M. Kucinski, R. Dhall, B. Savitzky, C. L. Ophus, R. Karkee, A. Mishra, E. Dervishi, J. H. Kang, C. Lee, J. Yoo, and M. T. Pettes",
+    "venue": "ACS Nano 18, 27",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Direct+measurement+of+the+thermal+expansion+coefficient+of+epitaxial+WSe2+by+four-dimensional+STEM"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Interplay between dislocation type and local structure in dislocation-twin boundary reactions in Cu",
+    "authors": "K. Dang, A. Mishra, S. Suresh, E. M. Kober, N. Mathew, and S. J. Fensin",
+    "venue": "Physical Review Materials 8, 063604",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Interplay+between+dislocation+type+and+local+structure+in+dislocation-twin+boundary+reactions+in+Cu"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Large Scale Benchmark of Materials Design Methods",
+    "authors": "K. Choudhary et al.",
+    "venue": "npj Computational Materials 10, 93",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Large+Scale+Benchmark+of+Materials+Design+Methods"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Data-driven search for promising intercalating ions and layered materials for metal-ion batteries",
+    "authors": "S. Parida, A. Mishra, Q. Yang, A. Dobley, C. B. Carter, and A. M. Dongare",
+    "venue": "Journal of Materials Science 59, 932",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Data-driven+search+for+promising+intercalating+ions+and+layered+materials+for+metal-ion+batteries"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "title": "Role of Microscopic Degrees of Freedom on Nanopillar Compression of Bicrystal Cu",
+    "authors": "A. Mishra, K. Dang, E. M. Kober, S. J. Fensin, and N. Mathew",
+    "venue": "Materials Research Letters 11, 872",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Role+of+Microscopic+Degrees+of+Freedom+on+Nanopillar+Compression+of+Bicrystal+Cu"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "title": "Interface Microstructure Effects on Dynamic Failure Behavior of Layered Cu/Ta Microstructures",
+    "authors": "R. Kumar, J. Chen, A. Mishra, and A. M. Dongare",
+    "venue": "Scientific Reports 13, 11365",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Interface+Microstructure+Effects+on+Dynamic+Failure+Behavior+of+Layered+Cu%2FTa+Microstructures"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "title": "Modeling Shock-induced Void Collapse in Single-crystal Ta Systems at the Mesoscales",
+    "authors": "S. Galitskiy, A. Mishra, and A. M. Dongare",
+    "venue": "International Journal of Plasticity 164, 103596",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Modeling+Shock-induced+Void+Collapse+in+Single-crystal+Ta+Systems+at+the+Mesoscales"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "title": "Modeling Laser Interactions with Aluminum and Tantalum Targets using a Hybrid Atomistic-Continuum Model",
+    "authors": "C. Ching, S. Galitskiy, A. Mishra, and A. M. Dongare",
+    "venue": "Journal of Applied Physics 133, 105901",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Modeling+Laser+Interactions+with+Aluminum+and+Tantalum+Targets+using+a+Hybrid+Atomistic-Continuum+Model"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "title": "Virtual Diffraction Simulations using the Quasi-Coarse-Grained Dynamics Method to Understand and Interpret Plasticity Contributions during In Situ Shock Experiments",
+    "authors": "A. Mishra, K. Ma, and A. M. Dongare",
+    "venue": "Journal of Materials Science 57, 12782",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Virtual+Diffraction+Simulations+using+the+Quasi-Coarse-Grained+Dynamics+Method"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "title": "Virtual Texture Analysis to Investigate the Deformation Mechanisms in Metal Microstructures at the Atomic-Scale",
+    "authors": "A. Mishra, M. J. Echeverria, K. Ma, S. Parida, C. Chen, S. Galitskiy, and A. M. Dongare",
+    "venue": "Journal of Materials Science 57, 10549",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Virtual+Texture+Analysis+to+Investigate+the+Deformation+Mechanisms+in+Metal+Microstructures+at+the+Atomic-Scale"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "title": "Feature Blending: An Approach Towards Unified Machine Learning Models for Band Gap Prediction",
+    "authors": "S. Satsangi, A. Mishra, and A. K. Singh",
+    "venue": "ACS Physical Chemistry Au 2, 16",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Feature+Blending+An+Approach+Towards+Unified+Machine+Learning+Models+for+Band+Gap+Prediction"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "title": "Understanding the Phase Transformation Mechanisms that affect the Dynamic Response of Fe-based Microstructures at the Atomic Scales",
+    "authors": "A. Mishra, J. Lind, M. Kumar, and A. M. Dongare",
+    "venue": "Journal of Applied Physics 130, 215902",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Understanding+the+Phase+Transformation+Mechanisms+that+affect+the+Dynamic+Response+of+Fe-based+Microstructures"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "title": "Modeling the Evolution of Microstructure during Laser Shock Loading and Spall Failure of Cu Microstructures at the Atomic Scales",
+    "authors": "M. J. Echeverria, S. Galitskiy, A. Mishra, and A. M. Dongare",
+    "venue": "Computational Materials Science 198, 110668",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Modeling+the+Evolution+of+Microstructure+during+Laser+Shock+Loading+and+Spall+Failure+of+Cu+Microstructures"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "title": "Fingerprinting Shock-induced Deformations via Diffraction",
+    "authors": "A. Mishra, C. Kunka, M. J. Echeverria, R. Dingreville, and A. M. Dongare",
+    "venue": "Scientific Reports 11, 9872",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Fingerprinting+Shock-induced+Deformations+via+Diffraction"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "title": "Origin of High Interfacial Resistance in Solid-State Batteries: LLTO/LCO Half-cells",
+    "authors": "P. Xu, W. Rheinheimer, A. Mishra, S. N. Shuvo, Z. Qi, H. Wang, A. M. Dongare, and L. A. Stanciu",
+    "venue": "ChemElectroChem 8, 1847",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Origin+of+High+Interfacial+Resistance+in+Solid-State+Batteries+LLTO+LCO+Half-cells"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "title": "Sulfur-doped Titanium Carbide MXenes for Room Temperature Gas Sensing",
+    "authors": "S. N. Shuvo, A. M. U. Gomez, A. Mishra, W. Y. Chen, A. M. Dongare, and L. A. Stanciu",
+    "venue": "ACS Sensors 5, 2915",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Sulfur-doped+Titanium+Carbide+MXenes+for+Room+Temperature+Gas+Sensing"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "title": "Vertically Stacked 2H-1T Dual-phase MoS2 Microstructures During Lithium Intercalation: A first Principles Study",
+    "authors": "S. Parida, A. Mishra, J. Chen, J. Wang, C. B. Carter, and A. M. Dongare",
+    "venue": "Journal of the American Ceramic Society 103, 6603",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Vertically+Stacked+2H-1T+Dual-phase+MoS2+Microstructures+During+Lithium+Intercalation"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "title": "Ultralow Thermal Conductivity and Anomalously High Thermoelectric Figure of Merit in Ternary In5X5Br (X = S, and Se) Compounds",
+    "authors": "T. Pandey, A. Nissimagoudar, A. Mishra, and A. K. Singh",
+    "venue": "Journal of Materials Chemistry A 8, 13812",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Ultralow+Thermal+Conductivity+and+Anomalously+High+Thermoelectric+Figure+of+Merit+in+Ternary+In5X5Br"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "title": "Structure-Dependent Electrical and Magnetic Properties of Iron Oxide Composites",
+    "authors": "N. Lertcumfu, F. N. Sayed, S. N. Shirodkar, S. Radhakrishnana, A. Mishra, G. Rujijanagul, A. K. Singh, B. I. Yakobson, C. S. Tiwary, and P. M. Ajayan",
+    "venue": "Physica Status Solidi A 1801004",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Structure-Dependent+Electrical+and+Magnetic+Properties+of+Iron+Oxide+Composites"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "title": "Magnetism in Two-Dimensional Materials Beyond Graphene",
+    "authors": "N. Sethulakshmi, A. Mishra, P. M. Ajayan, Y. Kawazoe, A. Roy, A. K. Singh, and C. S. Tiwary",
+    "venue": "Materials Today 27, 107",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Magnetism+in+Two-Dimensional+Materials+Beyond+Graphene"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "title": "Recent Advances in MXenes: From Fundamentals to Applications",
+    "authors": "M. Khazaei, A. Mishra, N. S. Venkataramanan, A. K. Singh, and S. Yunoki",
+    "venue": "Current Opinion in Solid State and Materials Science 23, 164",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Recent+Advances+in+MXenes+From+Fundamentals+to+Applications"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "title": "Accelerated Data-Driven Accurate Positioning of the Band-Edges of MXenes",
+    "authors": "A. Mishra, S. Satsangi, A. C. Rajan, H. Mizuseki, K.-R. Lee, and A. K. Singh",
+    "venue": "Journal of Physical Chemistry Letters 10, 780",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Accelerated+Data-Driven+Accurate+Positioning+of+the+Band-Edges+of+MXenes"
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "title": "Machine-Learning-Assisted Accurate Band Gap Predictions of Functionalized MXene",
+    "authors": "A. C. Rajan, A. Mishra, S. Satsangi, R. Vaish, H. Mizuseki, K.-R. Lee, and A. K. Singh",
+    "venue": "Chemistry of Materials 30, 4031",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Machine-Learning-Assisted+Accurate+Band+Gap+Predictions+of+Functionalized+MXene"
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "title": "Origami-Inspired 3D Interconnected Molybdenum Carbide Nanoflakes",
+    "authors": "R. Koizumi, S. Ozden, A. Samanta, A. P. P. Alves, A. Mishra, G. Ye, G. G. Silva, R. Vajtai, A. K. Singh, C. S. Tiwary, and P. M. Ajayan",
+    "venue": "Advanced Materials Interfaces 5, 1701113",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Origami-Inspired+3D+Interconnected+Molybdenum+Carbide+Nanoflakes"
+      }
+    ]
+  },
+  {
+    "year": "2017",
+    "title": "Ferroelectricity, Antiferroelectricity, and Ultrathin 2D Electron/Hole Gas in Multifunctional Monolayer MXene",
+    "authors": "A. Chandrasekaran, A. Mishra, and A. K. Singh",
+    "venue": "Nano Letters 17, 3290",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Ferroelectricity+Antiferroelectricity+and+Ultrathin+2D+Electron+Hole+Gas+in+Multifunctional+Monolayer+MXene"
+      }
+    ]
+  },
+  {
+    "year": "2017",
+    "title": "Atomistic Origin of Phase Stability in Oxygen Functionalized MXene: A Comparative Study",
+    "authors": "A. Mishra, P. Srivastava, A. Carreras, I. Tanaka, H. Mizuseki, K.-R. Lee, and A. K. Singh",
+    "venue": "Journal of Physical Chemistry C 121, 18947",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Atomistic+Origin+of+Phase+Stability+in+Oxygen+Functionalized+MXene+A+Comparative+Study"
+      }
+    ]
+  },
+  {
+    "year": "2016",
+    "title": "Mechanistic Insight into the Chemical Exfoliation and Functionalization of Ti3C2 MXene",
+    "authors": "P. Srivastava, A. Mishra, H. Mizuseki, K.-R. Lee, and A. K. Singh",
+    "venue": "ACS Applied Materials & Interfaces 8, 24256",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Mechanistic+Insight+into+the+Chemical+Exfoliation+and+Functionalization+of+Ti3C2+MXene"
+      }
+    ]
+  },
+  {
+    "year": "2016",
+    "title": "Isolation of pristine MXene from Nb4AlC3 MAX phase: A first-principles Study",
+    "authors": "A. Mishra, P. Srivastava, H. Mizuseki, K.-R. Lee, and A. K. Singh",
+    "venue": "Physical Chemistry Chemical Physics 18, 11073",
+    "links": [
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/scholar?q=Isolation+of+pristine+MXene+from+Nb4AlC3+MAX+phase+A+first-principles+Study"
+      }
+    ]
+  }
+]
