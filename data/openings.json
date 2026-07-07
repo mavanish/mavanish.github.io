@@ -1,0 +1,70 @@
+[
+  {
+    "id": "postdoc",
+    "category": "Postdoctoral",
+    "headline": "Postdoctoral Researchers",
+    "description": "Opportunities for researchers interested in AI for materials, quantum computing workflows, multiscale simulation, and virtual characterization.",
+    "jobs": [
+      {
+        "title": "Postdoc Fellowships",
+        "status": "Open / Inquire",
+        "items": [
+          "Director's Postdoc Fellow and Distinguished Postdoc Fellow pathways",
+          "CNLS postdoctoral fellowships for exceptional candidates",
+          "Oppenheimer postdoctoral fellowships for outstanding applicants",
+          "Research areas: physics-guided AI, atomistic simulation, materials informatics, quantum computing, and autonomous workflows"
+        ],
+        "note": "Send your CV and a brief statement of research interests. Include 2-3 representative papers if available.",
+        "buttonLabel": "Contact about postdoc roles",
+        "buttonUrl": "#contact"
+      }
+    ]
+  },
+  {
+    "id": "graduate",
+    "category": "Graduate",
+    "headline": "Graduate Students",
+    "description": "Graduate research opportunities are available through LANL student programs, fellowships, and collaborative university projects.",
+    "jobs": [
+      {
+        "title": "Graduate Research Opportunities",
+        "status": "Recruiting",
+        "items": [
+          {
+            "text": "DOE SCGSR Program",
+            "url": "https://science.osti.gov/wdts/scgsr"
+          },
+          "NNSA Lab Residency Graduate Fellowship (LRGF)",
+          "LANL graduate student appointments and summer research pathways",
+          "Topics include machine learning interatomic potentials, process-structure-property modeling, and AI agents for scientific workflows"
+        ],
+        "note": "Interested graduate students should send a short research-interest note, CV, and expected availability.",
+        "buttonLabel": "Contact about graduate roles",
+        "buttonUrl": "#contact"
+      }
+    ]
+  },
+  {
+    "id": "undergraduate",
+    "category": "Undergraduate",
+    "headline": "Undergraduate Students",
+    "description": "Undergraduate internships are suitable for students interested in computational materials science, Python-based scientific software, AI/ML, and simulation analysis.",
+    "jobs": [
+      {
+        "title": "Undergraduate Internships",
+        "status": "Seasonal",
+        "items": [
+          {
+            "text": "DOE SULI Program",
+            "url": "https://science.osti.gov/wdts/suli"
+          },
+          "LANL summer student and undergraduate research opportunities",
+          "Projects may include data analysis, molecular simulation workflows, visualization, and ML model development"
+        ],
+        "note": "Please include your CV/resume, coursework or coding experience, and preferred research topics.",
+        "buttonLabel": "Contact about internships",
+        "buttonUrl": "#contact"
+      }
+    ]
+  }
+]
