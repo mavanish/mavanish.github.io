@@ -20,6 +20,22 @@
     "dates": "04/2026 - present"
   },
   {
+    "name": "Daniel Maldonado-Lopez",
+    "role": "Postdoctoral Researcher",
+    "section": "postdoc",
+    "initials": "DML",
+    "photo": "",
+    "dates": "08/2026 - present",
+  },
+  {
+    "name": "Adam J. Witmer",
+    "role": "Postdoctoral Researcher",
+    "section": "postdoc",
+    "initials": "AW",
+    "photo": "",
+    "dates": "02/2026 - present"
+  },
+    {
     "name": "Jacob Z. Williams",
     "role": "Postdoctoral Researcher",
     "section": "postdoc",
@@ -31,17 +47,6 @@
     ]
   },
   {
-    "name": "Adam J. Witmer",
-    "role": "Postdoctoral Researcher",
-    "section": "postdoc",
-    "initials": "AW",
-    "photo": "",
-    "dates": "02/2026 - present",
-    "details": [
-      "Co-advised with Dr. Tyler Reddy, LANL"
-    ]
-  },
-  {
     "name": "Ashwin Ajit",
     "role": "Summer Student",
     "section": "student",
@@ -49,7 +54,7 @@
     "photo": "",
     "dates": "06/2026 - present",
     "details": [
-      "Carnegie Mellon University",
+      "Stony Brook University",
       "Co-advised with Dr. Saryu Fensin, LANL"
     ]
   },
