@@ -2681,10 +2681,10 @@ footer { background: transparent; }
 /* Clear glass: shared surfaces expose the color field beneath every page. */
 body {
     background:
-        radial-gradient(ellipse at 5% 12%, rgba(105, 148, 255, .48), transparent 55%),
-        radial-gradient(ellipse at 95% 40%, rgba(76, 210, 225, .38), transparent 55%),
-        radial-gradient(ellipse at 48% 95%, rgba(177, 133, 244, .38), transparent 58%),
-        #edf3fc;
+        radial-gradient(ellipse at 5% 12%, rgba(105, 148, 255, .32), transparent 55%),
+        radial-gradient(ellipse at 95% 40%, rgba(76, 210, 225, .25), transparent 55%),
+        radial-gradient(ellipse at 48% 95%, rgba(177, 133, 244, .25), transparent 58%),
+        #f5f8fe;
     background-attachment: fixed;
 }
 body.page-mode > .section,
