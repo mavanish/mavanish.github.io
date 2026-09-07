@@ -53,6 +53,17 @@
     return /^https?:/i.test(url || '') ? ' target="_blank" rel="noopener"' : '';
   }
 
+  // Icons are presentation assets; the JSON mark selects the matching symbol.
+  function socialIcon(mark) {
+    var paths = {
+      GH: '<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02 0 2.05.14 3.01.41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/>',
+      GS: '<path d="M12 0 0 9.5l5.24 4.27A7.5 7.5 0 0 1 12 9.5a7.5 7.5 0 0 1 6.76 4.27L24 9.5 12 0Z"/><circle cx="12" cy="17" r="7"/>',
+      iD: '<circle cx="12" cy="12" r="12"/><g fill="white"><circle cx="7.4" cy="5.3" r="1"/><path d="M6.65 7.4H8.1v10H6.65zM10.2 7.4h3.9c3.7 0 5.3 2.65 5.3 5 0 2.6-2 5-5.3 5h-3.9zm1.45 1.3v7.4h2.3c3.25 0 4-2.45 4-3.7s-.65-3.7-3.85-3.7z"/></g>',
+      '@': '<g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 6 9 7 9-7"/></g>'
+    };
+    return paths[mark] ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">' + paths[mark] + '</svg>' : escapeHTML(mark);
+  }
+
   function renderSite(site) {
     var links = (site.navigation || []).map(function (item) {
       return '<a href="#' + escapeHTML(item.target) + '">' + escapeHTML(item.label) + '</a>';
@@ -62,11 +73,16 @@
     });
 
     var hero = site.hero || {};
+    var titleHTML = escapeHTML(hero.title);
+    if (site.heroTitleAccent) {
+      var accentText = escapeHTML(site.heroTitleAccent);
+      titleHTML = titleHTML.replace(accentText, function () { return '<span class="accent">' + accentText + '</span>'; });
+    }
     var pillars = (hero.pillars || []).map(function (item) { return '<div class="pillar liquid-glass"><span class="pillar-icon">' + escapeHTML(item.icon) + '</span><h4>' + escapeHTML(item.title) + '</h4><p>' + escapeHTML(item.text) + '</p></div>'; }).join('');
     var actions = (hero.actions || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '" class="btn-' + escapeHTML(item.style) + '">' + escapeHTML(item.label) + '</a>'; }).join('');
-    var socials = (hero.socials || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) + ' aria-label="' + escapeHTML(item.label) + '"><span>' + escapeHTML(item.mark) + '</span></a>'; }).join('');
+    var socials = (hero.socials || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) + ' aria-label="' + escapeHTML(item.label) + '">' + socialIcon(item.mark) + '</a>'; }).join('');
     var heroTarget = document.getElementById('hero-data');
-    if (heroTarget) heroTarget.innerHTML = '<div class="hero-title-block"><h1><span class="hero-name">' + escapeHTML(hero.title) + '</span></h1></div><div class="hero-bottom"><div class="hero-content liquid-glass hero-glass"><p class="hero-subname">' + escapeHTML(hero.eyebrow) + '</p><p class="hero-tagline">' + escapeHTML(hero.tagline) + '</p><div class="hero-pillars">' + pillars + '</div><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div></div>';
+    if (heroTarget) heroTarget.innerHTML = '<div class="hero-title-block"><h1><span class="hero-name">' + titleHTML + '</span></h1></div><div class="hero-bottom"><div class="hero-content liquid-glass hero-glass"><p class="hero-subname">' + escapeHTML(hero.eyebrow) + '</p><p class="hero-tagline">' + escapeHTML(hero.tagline) + '</p><div class="hero-pillars">' + pillars + '</div><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div></div>';
 
     var about = site.about || {};
     var paragraphs = (about.paragraphs || []).map(function (p, i) { return '<p' + (i === 0 ? ' class="about-lead"' : '') + '>' + escapeHTML(p) + '</p>'; }).join('');
@@ -84,7 +100,7 @@
     if (joinTarget) joinTarget.innerHTML = '<div class="join-cta glass-card"><h3>' + escapeHTML(join.title) + '</h3><p>' + escapeHTML(join.text) + '</p><div class="join-perks">' + (join.perks || []).map(function (item) { return '<div class="perk liquid-glass"><div class="perk-icon">' + escapeHTML(item.icon) + '</div><h4>' + escapeHTML(item.title) + '</h4><p>' + escapeHTML(item.text) + '</p></div>'; }).join('') + '</div><div class="join-action"><a href="#contact" class="btn-primary">Get in Touch →</a></div></div><p class="openings-disclaimer">' + escapeHTML(join.disclaimer) + '</p>';
 
     var contact = site.contact || {}, contactTarget = document.getElementById('contact-data');
-    if (contactTarget) contactTarget.innerHTML = '<div class="section-header"><span class="section-tag">' + escapeHTML(contact.tag) + '</span><h2>' + escapeHTML(contact.title) + '</h2><p class="section-subtitle">' + escapeHTML(contact.subtitle) + '</p></div><div class="contact-grid">' + (contact.links || []).map(function (item) { var tag = item.url ? 'a' : 'div'; return '<' + tag + (item.url ? ' href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) : '') + ' class="contact-card glass-card"><span class="contact-mark">' + escapeHTML(item.mark) + '</span><h3>' + escapeHTML(item.label) + '</h3><span>' + escapeHTML(item.value) + '</span></' + tag + '>'; }).join('') + '</div>';
+    if (contactTarget) contactTarget.innerHTML = '<div class="section-header"><span class="section-tag">' + escapeHTML(contact.tag) + '</span><h2>' + escapeHTML(contact.title) + '</h2><p class="section-subtitle">' + escapeHTML(contact.subtitle) + '</p></div><div class="contact-grid">' + (contact.links || []).map(function (item) { var tag = item.url ? 'a' : 'div'; return '<' + tag + (item.url ? ' href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) : '') + ' class="contact-card glass-card"><span class="contact-mark">' + socialIcon(item.mark) + '</span><h3>' + escapeHTML(item.label) + '</h3><span class="contact-detail">' + escapeHTML(item.value) + '</span></' + tag + '>'; }).join('') + '</div>';
     var footerTarget = document.getElementById('footer-data');
     if (footerTarget && site.footer) footerTarget.innerHTML = '<span>' + escapeHTML(site.footer.copyright) + '</span><span class="footer-made">' + escapeHTML(site.footer.note) + '</span>';
   }
