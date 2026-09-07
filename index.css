@@ -1932,6 +1932,88 @@ footer {
     }
 }
 
+/* ---------- FLOATING GLASS MENU ---------- */
+#navbar::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(110deg, rgba(255,255,255,.42), transparent 38%, rgba(111,185,255,.10));
+}
+
+.nav-links a {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transform: scale(.72);
+    background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(218,229,255,.55));
+    border: 1px solid rgba(255,255,255,.95);
+    box-shadow: 0 7px 18px rgba(42,66,145,.13), inset 0 1px rgba(255,255,255,1);
+    transition: opacity .25s ease, transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before { opacity: 1; transform: scale(1); }
+.nav-links a:hover,
+.nav-links a.active { background: transparent; box-shadow: none; }
+
+#navToggle { width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 8px 22px rgba(31,47,100,.12); }
+#navToggle span { transform-origin: center; }
+#navToggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#navToggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#navToggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+    body.menu-open { overflow: hidden; }
+    .mobile-nav {
+        display: flex;
+        inset: 76px 12px auto;
+        max-height: calc(100vh - 90px);
+        padding: 1rem;
+        border-radius: 30px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: .35rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-14px) scale(.98);
+        background: rgba(247,250,255,.74);
+        border: 1px solid rgba(255,255,255,.94);
+        box-shadow: 0 28px 80px rgba(25,40,90,.22), inset 0 1px rgba(255,255,255,1);
+        overflow-y: auto;
+        transition: opacity .25s ease, transform .35s cubic-bezier(.2,.8,.2,1), visibility .25s;
+    }
+    .mobile-nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    .mobile-nav a {
+        padding: .82rem 1rem;
+        border-radius: 18px;
+        font-size: 1.06rem;
+        font-weight: 600;
+        letter-spacing: -.02em;
+    }
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+        color: var(--accent-dark);
+        background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(225,233,255,.62));
+        box-shadow: 0 8px 22px rgba(39,58,126,.10), inset 0 1px rgba(255,255,255,1);
+    }
+}
+
 @media (max-width: 600px) {
     .hero-name {
         font-size: 2rem;
@@ -2510,7 +2592,7 @@ body {
 .nav-links a.active { color: var(--accent-dark); background: rgba(255,255,255,.65); box-shadow: inset 0 0 0 1px rgba(255,255,255,.75); }
 
 .hero-title-block { margin-bottom: 1.1rem; }
-.hero-name { font-size: clamp(2.65rem, 7vw, 6.4rem); line-height: .96; letter-spacing: -.065em; }
+.hero-name { font-size: clamp(1.59rem, 4.2vw, 3.84rem); line-height: .96; letter-spacing: -.065em; }
 .hero-name .accent,
 .accent { color: var(--accent); }
 .hero-glass { border-radius: 36px; background: linear-gradient(140deg, rgba(255,255,255,.68), rgba(255,255,255,.27)); }
@@ -2572,4 +2654,84 @@ footer { background: transparent; }
     .hero-name { letter-spacing: -.052em; }
     .hero-glass { border-radius: 28px; }
     .section-header h2 { letter-spacing: -.045em; }
+}
+
+/* Keep the animated navigation lens above earlier theme rules. */
+.contact-card { padding: 2.25rem 1.25rem; gap: .65rem; }
+.contact-card .contact-mark {
+    width: 64px;
+    height: 64px;
+    margin-bottom: .6rem;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.65);
+    box-shadow: 0 12px 28px rgba(49,87,246,.2), inset 0 1px 0 rgba(255,255,255,.55);
+}
+.contact-mark svg { width: 30px; height: 30px; color: inherit; }
+.contact-card h3 { font-size: 1.12rem; }
+.contact-card .contact-detail { overflow-wrap: anywhere; line-height: 1.5; }
+.hero-social a svg { width: 20px; height: 20px; }
+.contact-card:focus-visible,
+.hero-social a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 560px) {
+    .contact-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.nav-links a:hover,
+.nav-links a.active { background: transparent; box-shadow: none; }
+/* Clear glass: shared surfaces expose the color field beneath every page. */
+body {
+    background:
+        radial-gradient(ellipse at 5% 12%, rgba(105, 148, 255, .48), transparent 55%),
+        radial-gradient(ellipse at 95% 40%, rgba(76, 210, 225, .38), transparent 55%),
+        radial-gradient(ellipse at 48% 95%, rgba(177, 133, 244, .38), transparent 58%),
+        #edf3fc;
+    background-attachment: fixed;
+}
+body.page-mode > .section,
+.section:nth-child(even),
+#hero { background: transparent; }
+
+.liquid-glass,
+.glass-card,
+.research-card,
+.publication-card,
+.publication-panel,
+.software-card,
+.news-card,
+.opening-row-header,
+.contact-card,
+.hero-glass,
+.pillar,
+.perk {
+    background: linear-gradient(135deg, rgba(255,255,255,.24), rgba(255,255,255,.08));
+    border-color: rgba(255,255,255,.56);
+    backdrop-filter: blur(14px) saturate(135%);
+    -webkit-backdrop-filter: blur(14px) saturate(135%);
+    box-shadow: 0 14px 40px rgba(35,55,108,.09), inset 0 1px 0 rgba(255,255,255,.65);
+}
+.glass-card::before,
+.research-card::before,
+.publication-card::before,
+.software-card::before,
+.news-card::before,
+.opening-row-header::before,
+.contact-card::before,
+.pillar::after,
+.perk::after {
+    background: linear-gradient(125deg, rgba(255,255,255,.16), transparent 32%, transparent 78%, rgba(255,255,255,.06));
+}
+#navbar,
+#navbar.scrolled { background: rgba(255,255,255,.22); }
+.btn-secondary,
+.section-tag,
+.hero-social a { background: rgba(255,255,255,.22); }
+/* Nested cards need less tint to avoid accumulating opaque white layers. */
+.publication-card { background: rgba(255,255,255,.10); }
+.impact-banner { background: linear-gradient(135deg, rgba(0,10,88,.85), rgba(32,48,168,.70)); }
+.modal-content { background: rgba(241,247,255,.86); }
+@media (max-width: 900px) {
+    .mobile-nav { background: rgba(241,247,255,.85); }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass-card, .research-card, .pillar, #navbar { background-color: rgba(245,249,255,.85); }
 }

@@ -130,6 +130,7 @@
   toggle.addEventListener('click', function () {
     mobileNav.classList.toggle('open');
     toggle.classList.toggle('active');
+    document.body.classList.toggle('menu-open', mobileNav.classList.contains('open'));
     toggle.setAttribute('aria-expanded', mobileNav.classList.contains('open') ? 'true' : 'false');
   });
 
@@ -137,7 +138,18 @@
     if (event.target.closest('a')) {
       mobileNav.classList.remove('open');
       toggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
       toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+      mobileNav.classList.remove('open');
+      toggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
     }
   });
 })();
