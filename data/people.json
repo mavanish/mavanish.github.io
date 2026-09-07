@@ -25,7 +25,7 @@
     "section": "postdoc",
     "initials": "DML",
     "photo": "",
-    "dates": "08/2026 - present",
+    "dates": "08/2026 - present"
   },
   {
     "name": "Adam J. Witmer",
@@ -49,10 +49,10 @@
   {
     "name": "Ashwin Ajit",
     "role": "Summer Student",
-    "section": "student",
+    "section": "alumni",
     "initials": "AA",
     "photo": "",
-    "dates": "06/2026 - present",
+    "dates": "06/2026 - 08/2026",
     "details": [
       "Stony Brook University",
       "Co-advised with Dr. Saryu Fensin, LANL"
@@ -60,7 +60,7 @@
   },
   {
     "name": "Kaya Tacer",
-    "role": "Summer Student",
+    "role": "Casual Status",
     "section": "student",
     "initials": "KT",
     "photo": "",
