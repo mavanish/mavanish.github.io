@@ -130,14 +130,15 @@
   toggle.addEventListener('click', function () {
     mobileNav.classList.toggle('open');
     toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', mobileNav.classList.contains('open') ? 'true' : 'false');
   });
 
-  var links = mobileNav.querySelectorAll('a');
-  links.forEach(function (link) {
-    link.addEventListener('click', function () {
+  mobileNav.addEventListener('click', function (event) {
+    if (event.target.closest('a')) {
       mobileNav.classList.remove('open');
       toggle.classList.remove('active');
-    });
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 })();
 
@@ -147,7 +148,6 @@
   var pages = pageIds
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
-  var navLinks = document.querySelectorAll('a[href^="#"]');
 
   function getCurrentPage() {
     var hash = window.location.hash.replace('#', '');
@@ -159,7 +159,7 @@
       page.classList.toggle('page-active', page.id === id);
     });
 
-    navLinks.forEach(function (link) {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       var target = link.getAttribute('href').replace('#', '');
       link.classList.toggle('active', target === id);
     });
@@ -167,8 +167,9 @@
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }
 
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (link) {
       var href = link.getAttribute('href');
       var id = href.replace('#', '');
       if (pageIds.indexOf(id) === -1) return;
@@ -178,8 +179,10 @@
       } else {
         setActivePage(id);
       }
-    });
+    }
   });
+
+  document.addEventListener('matiq:content-ready', function () { setActivePage(getCurrentPage()); });
 
   window.addEventListener('hashchange', function () {
     setActivePage(getCurrentPage());
