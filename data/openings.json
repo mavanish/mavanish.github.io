@@ -1,4 +1,10 @@
 [
+  {
+    "id": "postdoc",
+    "category": "Postdoc",
+    "headline": "Postdoctoral Fellows",
+    "description": "Postdoctoral research opportunities are available across computational materials science, AI/ML, atomistic simulation, and related areas.",
+    "jobs": [
       {
         "title": "Postdoc Fellowships",
         "status": "Open / Inquire",
