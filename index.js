@@ -3,108 +3,6 @@
    Neural Particles · Scroll Reveal · Counters
    ======================================== */
 
-// ---------- PARTICLE SYSTEM (Light Theme - Neural Network) ----------
-(function initParticles() {
-  const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w, h, particles, mouse;
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-
-  mouse = { x: -1000, y: -1000 };
-
-  window.addEventListener('mousemove', function (e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  function Particle() {
-    this.x = Math.random() * w;
-    this.y = Math.random() * h;
-    this.vx = (Math.random() - 0.5) * 0.3;
-    this.vy = (Math.random() - 0.5) * 0.3;
-    this.radius = Math.random() * 2 + 0.5;
-    this.opacity = Math.random() * 0.3 + 0.1;
-  }
-
-  function createParticles() {
-    var count = Math.floor((w * h) / 14000);
-    count = Math.min(count, 150);
-    count = Math.max(count, 35);
-    particles = [];
-    for (var i = 0; i < count; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function drawLine(p1, p2, dist) {
-    var maxDist = 150;
-    if (dist > maxDist) return;
-    var alpha = (1 - dist / maxDist) * 0.12;
-    ctx.strokeStyle = 'rgba(0,102,255,' + alpha + ')';
-    ctx.lineWidth = 0.6;
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.stroke();
-  }
-
-  function frame() {
-    ctx.clearRect(0, 0, w, h);
-
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
-
-      // mouse interaction
-      var dx = p.x - mouse.x;
-      var dy = p.y - mouse.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        p.x += dx * 0.012;
-        p.y += dy * 0.012;
-      }
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0) p.x = w;
-      if (p.x > w) p.x = 0;
-      if (p.y < 0) p.y = h;
-      if (p.y > h) p.y = 0;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0,102,255,' + p.opacity + ')';
-      ctx.fill();
-
-      // connections (neural network look)
-      for (var j = i + 1; j < particles.length; j++) {
-        var p2 = particles[j];
-        var ddx = p.x - p2.x;
-        var ddy = p.y - p2.y;
-        var d = Math.sqrt(ddx * ddx + ddy * ddy);
-        drawLine(p, p2, d);
-      }
-    }
-
-    requestAnimationFrame(frame);
-  }
-
-  window.addEventListener('resize', function () {
-    resize();
-    createParticles();
-  });
-
-  resize();
-  createParticles();
-  frame();
-})();
-
-
 // ---------- NAVBAR SCROLL ----------
 (function initNavbar() {
   var navbar = document.getElementById('navbar');
@@ -177,6 +75,7 @@
     });
 
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (id === 'hero') document.dispatchEvent(new CustomEvent('matiq:home-shown'));
   }
 
   document.addEventListener('click', function (e) {
@@ -280,30 +179,92 @@
 })();
 
 
-// ---------- TILT EFFECT ON RESEARCH CARDS ----------
-function initTilt() {
-  var cards = document.querySelectorAll('[data-tilt]');
-  cards.forEach(function (card) {
-    if (card.dataset.tiltReady === 'true') return;
-    card.dataset.tiltReady = 'true';
-    card.addEventListener('mousemove', function (e) {
-      var rect = card.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var rotateX = ((y - cy) / cy) * -3;
-      var rotateY = ((x - cx) / cx) * 3;
-      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-5px)';
+// ---------- HERO SLIDER ----------
+// One slide per focus area. Arrows, dots, focus tabs, arrow keys and swipe all
+// change slides; it also advances on its own. Each time a slide is shown (or the
+// home page is revisited) its drawing animation replays.
+(function initHeroSlider() {
+  var SLIDE_MS = 7000;
+  var index = 0, timer = null, paused = false;
+
+  function el(sel) { return document.querySelector(sel); }
+  function all(sel) { return document.querySelectorAll(sel); }
+
+  function show(i) {
+    var slides = all('.hero-figure .scene');
+    var track = el('.hero-figure .slider-track');
+    if (!slides.length || !track) return;
+    index = (i + slides.length) % slides.length;
+    track.style.transform = 'translateX(' + (-100 * index) + '%)';
+
+    slides.forEach(function (slide, k) {
+      slide.classList.remove('is-active');
+      slide.setAttribute('aria-hidden', k === index ? 'false' : 'true');
+      if (k === index) { void slide.offsetWidth; slide.classList.add('is-active'); }
+    });
+    all('.slider-dot').forEach(function (dot, k) {
+      dot.classList.toggle('is-active', k === index);
+      dot.setAttribute('aria-current', k === index ? 'true' : 'false');
+    });
+    all('.focus-tab').forEach(function (tab, k) {
+      tab.classList.remove('is-active');
+      tab.setAttribute('aria-pressed', k === index ? 'true' : 'false');
+      if (k === index) { void tab.offsetWidth; tab.classList.add('is-active'); }
     });
 
-    card.addEventListener('mouseleave', function () {
-      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
-    });
+    var count = el('.slider-count');
+    if (count) count.textContent = (index + 1) + ' / ' + slides.length;
+    var caption = el('.hero-figure .scene-caption');
+    if (caption && window.MatIQScenes && window.MatIQScenes[index]) caption.textContent = window.MatIQScenes[index].caption;
+    schedule();
+  }
+
+  function schedule() {
+    window.clearTimeout(timer);
+    var hero = document.getElementById('hero');
+    if (paused || document.hidden || !hero || !hero.classList.contains('page-active')) return;
+    timer = window.setTimeout(function () { show(index + 1); }, SLIDE_MS);
+  }
+
+  function setPaused(value) {
+    if (value === paused) return;
+    paused = value;
+    all('.focus-tab').forEach(function (t) { t.classList.toggle('is-paused', paused); });
+    schedule();
+  }
+
+  document.addEventListener('click', function (e) {
+    var target = e.target.closest('.slider-arrow, .slider-dot, .focus-tab');
+    if (!target) return;
+    if (target.classList.contains('slider-arrow')) show(index + parseInt(target.getAttribute('data-dir'), 10));
+    else show(parseInt(target.getAttribute('data-scene'), 10));
   });
-}
-initTilt();
-document.addEventListener('matiq:content-ready', initTilt);
+
+  document.addEventListener('keydown', function (e) {
+    if (!e.target.closest || !e.target.closest('.hero-figure')) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+  });
+
+  // Pause while the pointer is over the figure.
+  document.addEventListener('mouseover', function (e) { setPaused(!!e.target.closest('.hero-figure')); });
+
+  // Swipe on touch screens.
+  var startX = null;
+  document.addEventListener('touchstart', function (e) {
+    startX = e.target.closest('.slider-viewport') ? e.touches[0].clientX : null;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+
+  document.addEventListener('matiq:home-shown', function () { show(index); });
+  document.addEventListener('matiq:content-ready', function () { show(index); });
+  document.addEventListener('visibilitychange', schedule);
+})();
 
 
 // ---------- PUBLICATION DOI FETCHER ----------
@@ -438,13 +399,19 @@ function initModals() {
   cards.forEach(function (card) {
     if (card.dataset.modalReady === 'true') return;
     card.dataset.modalReady = 'true';
-    card.addEventListener('click', function () {
+    function openModal() {
       var modalId = card.getAttribute('data-modal');
       var modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
+        var close = modal.querySelector('.modal-close');
+        if (close) close.focus();
       }
+    }
+    card.addEventListener('click', openModal);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
     });
   });
 
