@@ -1,9 +1,9 @@
 [
   {
-    "name": "aNANt",
-    "url": "https://anant.mrc.iisc.ac.in/",
-    "description": "India's first computational materials database — 23,000+ MXenes with optimized structures and electronic properties for ML training.",
-    "tag": "Database · ML-Ready · Ph.D."
+    "name": "URSA",
+    "url": "https://github.com/lanl/ursa",
+    "description": "Contributor to LANL's Universal Research and Scientific Agent — an AI-powered research assistant for scientific discovery.",
+    "tag": "LANL · LLM Agent"
   },
   {
     "name": "VirTex",
@@ -18,9 +18,9 @@
     "tag": "NIST · AI Benchmarking"
   },
   {
-    "name": "URSA",
-    "url": "https://github.com/lanl/ursa",
-    "description": "Contributor to LANL's Universal Research and Scientific Agent — an AI-powered research assistant for scientific discovery.",
-    "tag": "LANL · LLM Agent"
+    "name": "aNANt",
+    "url": "https://anant.mrc.iisc.ac.in/",
+    "description": "India's first computational materials database — 23,000+ MXenes with optimized structures and electronic properties for ML training.",
+    "tag": "Database · ML-Ready · Ph.D."
   }
 ]

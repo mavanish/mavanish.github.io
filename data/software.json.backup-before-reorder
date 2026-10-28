@@ -1,0 +1,26 @@
+[
+  {
+    "name": "aNANt",
+    "url": "https://anant.mrc.iisc.ac.in/",
+    "description": "India's first computational materials database — 23,000+ MXenes with optimized structures and electronic properties for ML training.",
+    "tag": "Database · ML-Ready · Ph.D."
+  },
+  {
+    "name": "VirTex",
+    "url": "https://virtex.readthedocs.io/",
+    "description": "Python package for virtual texture analysis from atomistic microstructures: orientation relationships, misorientations, Schmid factors.",
+    "tag": "Python · Analysis"
+  },
+  {
+    "name": "JARVIS-Leaderboard",
+    "url": "https://github.com/usnistgov/jarvis_leaderboard",
+    "description": "Official contributor to NIST's benchmarking platform for materials science ML methods and AI models.",
+    "tag": "NIST · AI Benchmarking"
+  },
+  {
+    "name": "URSA",
+    "url": "https://github.com/lanl/ursa",
+    "description": "Contributor to LANL's Universal Research and Scientific Agent — an AI-powered research assistant for scientific discovery.",
+    "tag": "LANL · LLM Agent"
+  }
+]
