@@ -36,7 +36,7 @@
     (map[path] || []).forEach(function (id) {
       var target = document.getElementById(id);
       if (target && (!target.children.length || target.querySelector('.content-loading'))) {
-        target.innerHTML = '<div class="content-error glass-card"><strong>Content could not be loaded.</strong><span>Serve this folder through a web server so the browser can read ' + escapeHTML(path) + '.</span></div>';
+        target.innerHTML = '<div class="content-error"><strong>Content could not be loaded.</strong><span>Serve this folder through a web server so the browser can read ' + escapeHTML(path) + '.</span></div>';
       }
     });
     console.error('[Mat-IQ] Failed to load ' + path, error);
@@ -73,34 +73,45 @@
     });
 
     var hero = site.hero || {};
-    var titleHTML = escapeHTML(hero.title);
-    if (site.heroTitleAccent) {
-      var accentText = escapeHTML(site.heroTitleAccent);
-      titleHTML = titleHTML.replace(accentText, function () { return '<span class="accent">' + accentText + '</span>'; });
-    }
-    var pillars = (hero.pillars || []).map(function (item) { return '<div class="pillar liquid-glass"><span class="pillar-icon">' + escapeHTML(item.icon) + '</span><h4>' + escapeHTML(item.title) + '</h4><p>' + escapeHTML(item.text) + '</p></div>'; }).join('');
+    var scenes = window.MatIQScenes || [];
+    var focus = (hero.pillars || []).map(function (item, i) {
+      var inner = '<h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.text) + '</p>';
+      if (!scenes[i]) return '<li>' + inner + '</li>';
+      return '<li><button type="button" class="focus-tab" data-scene="' + i + '" aria-pressed="false"><span class="focus-progress" aria-hidden="true"></span>' + inner + '</button></li>';
+    }).join('');
+    var slides = scenes.map(function (scene, i) {
+      return '<div class="scene" data-scene="' + i + '" role="group" aria-roledescription="slide" aria-label="' + (i + 1) + ' of ' + scenes.length + '">' + scene.svg() + '</div>';
+    }).join('');
+    var dots = scenes.map(function (scene, i) {
+      return '<button type="button" class="slider-dot" data-scene="' + i + '" aria-label="Show slide ' + (i + 1) + '"></button>';
+    }).join('');
+    var figure = scenes.length ? '<div class="slider-viewport" tabindex="0" aria-label="Research illustrations. Use the arrow keys to change slides."><div class="slider-track">' + slides + '</div></div>' +
+      '<div class="slider-bar"><button type="button" class="slider-arrow" data-dir="-1" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+      '<div class="slider-dots">' + dots + '</div><span class="slider-count" aria-live="polite"></span>' +
+      '<button type="button" class="slider-arrow" data-dir="1" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>' +
+      '<figcaption class="scene-caption"></figcaption>' : '';
     var actions = (hero.actions || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '" class="btn-' + escapeHTML(item.style) + '">' + escapeHTML(item.label) + '</a>'; }).join('');
-    var socials = (hero.socials || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) + ' aria-label="' + escapeHTML(item.label) + '">' + socialIcon(item.mark) + '</a>'; }).join('');
+    var socials = (hero.socials || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) + ' aria-label="' + escapeHTML(item.label) + '" title="' + escapeHTML(item.label) + '">' + socialIcon(item.mark) + '</a>'; }).join('');
     var heroTarget = document.getElementById('hero-data');
-    if (heroTarget) heroTarget.innerHTML = '<div class="hero-title-block"><h1><span class="hero-name">' + titleHTML + '</span></h1></div><div class="hero-bottom"><div class="hero-content liquid-glass hero-glass"><p class="hero-subname">' + escapeHTML(hero.eyebrow) + '</p><p class="hero-tagline">' + escapeHTML(hero.tagline) + '</p><div class="hero-pillars">' + pillars + '</div><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div></div>';
+    if (heroTarget) heroTarget.innerHTML = '<div class="hero-grid"><div class="hero-text"><h1>' + escapeHTML(hero.title) + '</h1><p class="hero-intro">' + escapeHTML(hero.eyebrow) + '</p><p class="hero-tagline">' + escapeHTML(hero.tagline) + '</p><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div><figure class="hero-figure">' + figure + '</figure></div><ul class="hero-focus">' + focus + '</ul>';
 
     var about = site.about || {};
     var paragraphs = (about.paragraphs || []).map(function (p, i) { return '<p' + (i === 0 ? ' class="about-lead"' : '') + '>' + escapeHTML(p) + '</p>'; }).join('');
-    var highlights = (about.highlights || []).map(function (item) { return '<div class="highlight-card glass-card"><div class="highlight-icon">' + escapeHTML(item.icon) + '</div><h3>' + escapeHTML(item.title) + '</h3><p><strong>' + escapeHTML(item.main) + '</strong></p><p class="subtle">' + escapeHTML(item.detail) + '</p></div>'; }).join('');
+    var highlights = (about.highlights || []).map(function (item) { return '<div class="highlight-card"><h3>' + escapeHTML(item.title) + '</h3><p><strong>' + escapeHTML(item.main) + '</strong></p><p class="subtle">' + escapeHTML(item.detail) + '</p></div>'; }).join('');
     var aboutTarget = document.getElementById('about-data');
-    if (aboutTarget) aboutTarget.innerHTML = '<div class="section-header"><span class="section-tag">' + escapeHTML(about.tag) + '</span><h2>' + escapeHTML(about.title) + '</h2></div><div class="about-grid"><div class="about-text">' + paragraphs + '</div><div class="about-highlights">' + highlights + '</div></div>';
+    if (aboutTarget) aboutTarget.innerHTML = '<div class="section-header"><h2>' + escapeHTML(about.title) + '</h2></div><div class="about-grid"><div class="about-text">' + paragraphs + '</div><div class="about-highlights">' + highlights + '</div></div>';
 
     var careerTarget = document.getElementById('career-data');
-    if (careerTarget) careerTarget.innerHTML = '<div class="career-path"><div class="section-header compact-header"><span class="section-tag">Career Path</span><h2>Research Journey</h2></div><div class="timeline"><div class="timeline-track"></div>' + (site.career || []).map(function (item) { return '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">' + escapeHTML(item.year) + '</span><h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.text) + '</p></div></div>'; }).join('') + '</div></div>';
+    if (careerTarget) careerTarget.innerHTML = '<div class="career-path"><h2 class="sub-heading">Research journey</h2><div class="timeline">' + (site.career || []).map(function (item) { return '<div class="timeline-item"><span class="timeline-year">' + escapeHTML(item.year) + '</span><div class="timeline-content"><h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.text) + '</p></div></div>'; }).join('') + '</div></div>';
 
     var impact = site.impact || {}, impactTarget = document.getElementById('impact-data');
     if (impactTarget) impactTarget.innerHTML = (impact.metrics || []).map(function (item) { return '<div class="impact-stat"><span class="big-number">' + escapeHTML(item.value) + '</span><span>' + escapeHTML(item.label) + '</span></div>'; }).join('') + (impact.button ? '<a href="' + escapeHTML(impact.button.url) + '" class="btn-primary"' + linkAttrs(impact.button.url) + '>' + escapeHTML(impact.button.label) + '</a>' : '');
 
     var join = site.join || {}, joinTarget = document.getElementById('join-data');
-    if (joinTarget) joinTarget.innerHTML = '<div class="join-cta glass-card"><h3>' + escapeHTML(join.title) + '</h3><p>' + escapeHTML(join.text) + '</p><div class="join-perks">' + (join.perks || []).map(function (item) { return '<div class="perk liquid-glass"><div class="perk-icon">' + escapeHTML(item.icon) + '</div><h4>' + escapeHTML(item.title) + '</h4><p>' + escapeHTML(item.text) + '</p></div>'; }).join('') + '</div><div class="join-action"><a href="#contact" class="btn-primary">Get in Touch →</a></div></div><p class="openings-disclaimer">' + escapeHTML(join.disclaimer) + '</p>';
+    if (joinTarget) joinTarget.innerHTML = '<div class="join-cta"><h3>' + escapeHTML(join.title) + '</h3><p>' + escapeHTML(join.text) + '</p><div class="join-perks">' + (join.perks || []).map(function (item) { return '<div class="perk"><h4>' + escapeHTML(item.title) + '</h4><p>' + escapeHTML(item.text) + '</p></div>'; }).join('') + '</div><div class="join-action"><a href="#contact" class="btn-primary">Get in touch</a></div></div><p class="openings-disclaimer">' + escapeHTML(join.disclaimer) + '</p>';
 
     var contact = site.contact || {}, contactTarget = document.getElementById('contact-data');
-    if (contactTarget) contactTarget.innerHTML = '<div class="section-header"><span class="section-tag">' + escapeHTML(contact.tag) + '</span><h2>' + escapeHTML(contact.title) + '</h2><p class="section-subtitle">' + escapeHTML(contact.subtitle) + '</p></div><div class="contact-grid">' + (contact.links || []).map(function (item) { var tag = item.url ? 'a' : 'div'; return '<' + tag + (item.url ? ' href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) : '') + ' class="contact-card glass-card"><span class="contact-mark">' + socialIcon(item.mark) + '</span><h3>' + escapeHTML(item.label) + '</h3><span class="contact-detail">' + escapeHTML(item.value) + '</span></' + tag + '>'; }).join('') + '</div>';
+    if (contactTarget) contactTarget.innerHTML = '<div class="section-header"><h2>' + escapeHTML(contact.title) + '</h2><p class="section-subtitle">' + escapeHTML(contact.subtitle) + '</p></div><div class="contact-grid">' + (contact.links || []).map(function (item) { var tag = item.url ? 'a' : 'div'; return '<' + tag + (item.url ? ' href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) : '') + ' class="contact-card"><span class="contact-mark">' + socialIcon(item.mark) + '</span><h3>' + escapeHTML(item.label) + '</h3><span class="contact-detail">' + escapeHTML(item.value) + '</span></' + tag + '>'; }).join('') + '</div>';
     var footerTarget = document.getElementById('footer-data');
     if (footerTarget && site.footer) footerTarget.innerHTML = '<span>' + escapeHTML(site.footer.copyright) + '</span><span class="footer-made">' + escapeHTML(site.footer.note) + '</span>';
   }
@@ -120,7 +131,7 @@
     const avatarClass = isPi ? 'pi-avatar' : (isStudent ? 'student-avatar' : (isAlumni ? 'alumni-avatar' : ''));
     const details = (person.details || []).map(function (line) { return '<p>' + escapeHTML(line) + '</p>'; }).join('');
     return [
-      '<div class="group-card glass-card' + cardClass + '">',
+      '<div class="group-card' + cardClass + '">',
       imageOrInitials(person, avatarClass),
       '<div class="group-info">',
       '<h3>' + escapeHTML(person.name) + '</h3>',
@@ -151,13 +162,11 @@
     const tags = (item.tags || []).map(function (tag) { return '<span>' + escapeHTML(tag) + '</span>'; }).join('');
     const icon = safeInlineSVG(item.iconSvg) || escapeHTML(item.icon || '✦');
     return [
-      '<div class="research-card" data-tilt data-modal="' + escapeHTML(item.id) + '">',
-      '<div class="card-glow"></div>',
-      '<div class="card-icon ai-card-icon">' + icon + '</div>',
-      '<h3>' + escapeHTML(item.title) + '</h3>',
+      '<div class="research-card" role="button" tabindex="0" data-modal="' + escapeHTML(item.id) + '">',
+      '<div class="card-icon">' + icon + '</div>',
+      '<div class="card-main"><h3>' + escapeHTML(item.title) + '</h3><div class="card-tags">' + tags + '</div></div>',
       '<p>' + escapeHTML(item.summary) + '</p>',
-      '<div class="card-tags">' + tags + '</div>',
-      '<span class="card-cta">Learn more →</span>',
+      '<span class="card-cta">Read more</span>',
       '</div>'
     ].join('');
   }
@@ -165,11 +174,11 @@
   function researchModal(item) {
     return [
       '<div class="modal-overlay" id="' + escapeHTML(item.id) + '">',
-      '<div class="modal-content glass-card">',
+      '<div class="modal-content" role="dialog" aria-modal="true">',
       '<button class="modal-close" aria-label="Close">&times;</button>',
       '<h2>' + escapeHTML(item.title) + '</h2>',
       item.body || '',
-      '<a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener" class="btn-primary">View Publications →</a>',
+      '<a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener" class="btn-primary">View publications</a>',
       '</div></div>'
     ].join('');
   }
@@ -212,7 +221,7 @@
     target.innerHTML = items.map(function (item) {
       const image = item.image ? '<img class="software-image" src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.name) + '">' : '';
       return [
-        '<a href="' + escapeHTML(item.url) + '" target="_blank" rel="noopener" class="software-card glass-card">',
+        '<a href="' + escapeHTML(item.url) + '" target="_blank" rel="noopener" class="software-card">',
         image,
         '<h3>' + escapeHTML(item.name) + '</h3>',
         '<p>' + escapeHTML(item.description) + '</p>',
@@ -228,11 +237,10 @@
     target.innerHTML = items.map(function (item) {
       const image = item.image ? '<img class="news-image" src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.title) + '">' : '';
       return [
-        '<article class="news-card glass-card">',
-        image,
-        '<span class="section-tag compact-tag">' + escapeHTML(item.tag || 'News') + ' · ' + escapeHTML(item.date) + '</span>',
-        '<h3>' + escapeHTML(item.title) + '</h3>',
-        '<p>' + escapeHTML(item.excerpt || '') + '</p>',
+        '<article class="news-card">',
+        '<div class="news-meta"><time>' + escapeHTML(item.date) + '</time><span class="news-tag">' + escapeHTML(item.tag || 'News') + '</span></div>',
+        '<div class="news-body">' + image + '<h3>' + escapeHTML(item.title) + '</h3>',
+        '<p>' + escapeHTML(item.excerpt || '') + '</p></div>',
         '</article>'
       ].join('');
     }).join('');
@@ -253,7 +261,7 @@
     const items = (job.items || []).map(openingItem).join('');
     const button = job.buttonUrl ? '<a class="opening-link" href="' + escapeHTML(job.buttonUrl) + '"' + linkAttrs(job.buttonUrl) + '>' + escapeHTML(job.buttonLabel || 'Learn more') + '</a>' : '';
     return [
-      '<article class="opening-card glass-card">',
+      '<article class="opening-card">',
       job.status ? '<div class="opening-status">' + escapeHTML(job.status) + '</div>' : '',
       '<h3>' + escapeHTML(job.title) + '</h3>',
       items ? '<ul>' + items + '</ul>' : '',
