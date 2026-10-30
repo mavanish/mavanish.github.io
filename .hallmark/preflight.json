@@ -1,0 +1,20 @@
+{
+  "scanned": "2026-10-30",
+  "findings": {
+    "fonts": "Source Serif 4 + IBM Plex Sans, index.html:6",
+    "palette": "Mat-IQ cobalt #2147c4, original index.css:14",
+    "framework": "Static HTML, JSON renderer and hash router"
+  },
+  "preserve": [
+    "content",
+    "routes",
+    "font pairing",
+    "cobalt",
+    "scientific diagrams"
+  ],
+  "introduce": [
+    "research index compositions",
+    "readable static fallback",
+    "accessible carousel and dialog"
+  ]
+}

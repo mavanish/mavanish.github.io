@@ -1,0 +1,9 @@
+# Redesign notes
+
+Preserved the original nine hash routes, JSON source data, research diagrams, form, search and dialog wiring. Existing metrics and scientific claims are carried over as supplied and have not been independently verified.
+
+Copy changes in the presentation layer: hero title “Mat-IQ: Materials Intelligence & Quantum Lab” becomes “Materials Intelligence & Quantum”; the Mat-IQ identity remains in the masthead and full lab name in the directory. Hero tagline becomes “Materials discovery through atomistic simulation, machine learning, and quantum computing.” The PI greeting moves to the biography; its substantive methods and affiliation remain in the biography. “next-generation” is removed; “cutting-edge science” becomes “materials research”; “world-class computing resources” becomes “high-performance computing resources”; “World-Class HPC” becomes “High-performance computing”. Middle-dot separators become commas, prose em dashes become colons, en-dash ranges become “to”, and AIR expands to “all-India rank”. Professional acronyms remain intact. No JSON source claims were rewritten.
+
+No stand-in imagery or image slots added. Existing initials remain where portrait files are absent. The strongest future material would be an actual research figure with its caption, or real PI and team portraits.
+
+Review performed in-thread: inspected desktop and phone captures of the home, research index, software catalogue, group directory, publication search, openings and contact. Resolved heading skips, focus handling, movement preferences and overly long hero copy. The previous page gave the PI identity more prominence on the home page; the redesign places it in About PI and Group. The idea is carried through the research index and software catalogue. Keep the scientific specificity and restrained cobalt while extending the site.

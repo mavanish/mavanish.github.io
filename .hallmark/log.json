@@ -1,0 +1,49 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Research index",
+  "theme": "brand",
+  "axes": [
+   "pale blue",
+   "serif",
+   "cobalt"
+  ],
+  "hero": "Stage",
+  "nav": "scientific masthead",
+  "footer": "colophon",
+  "imagery": "existing scientific diagrams and supplied news images",
+  "photos": [],
+  "entry": "index.html",
+  "fingerprint": {
+   "shape": "research index",
+   "hero": "Stage",
+   "nav": "masthead",
+   "footer": "colophon",
+   "lead": "grain boundary",
+   "action": "research"
+  },
+  "sections": [
+   "hero",
+   "about",
+   "group",
+   "research",
+   "publications",
+   "software",
+   "news",
+   "openings",
+   "contact"
+  ],
+  "signature": "labelled crystal grain boundary diagram",
+  "waived": [
+   "39b",
+   "44c",
+   "59",
+   "79",
+   "80"
+  ],
+  "prompt": "Redesign Mat-IQ research group website for collaborators and recruits, preserving brand, content and wiring",
+  "date": "2026-10-30"
+ }
+]

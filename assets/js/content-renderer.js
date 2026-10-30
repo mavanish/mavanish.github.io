@@ -3,7 +3,7 @@
    reads well if JavaScript or local fetch is unavailable. */
 (function () {
   function escapeHTML(value) {
-    return String(value || '').replace(/[&<>"']/g, function (char) {
+    return String(value || '').replace(/ · /g, ', ').replace(/–/g, ' to ').replace(/ — /g, ': ').replace(/next-generation[ -]/g, '').replace(/GATE AIR/g, 'GATE all-India rank').replace(/CSIR-NET AIR/g, 'CSIR-NET all-India rank').replace(/TMS, APS, MRS, ICME/g, 'Affiliations: TMS, APS, MRS, ICME').replace(/cutting-edge science/g, 'materials research').replace(/world-class computing resources/g, 'high-performance computing resources').replace(/World-Class HPC/g, 'High-performance computing').replace(/[&<>"']/g, function (char) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char];
     });
   }
@@ -14,7 +14,7 @@
     // Keep this intentionally conservative: JSON is local, but avoid rendering scripts/events.
     if (!/^<svg[\s>]/i.test(svg)) return '';
     if (/<script|on\w+=|javascript:/i.test(svg)) return '';
-    return svg;
+    return svg.replace('<svg', '<svg aria-hidden="true"');
   }
 
   async function loadJSON(path) {
@@ -58,7 +58,7 @@
     var paths = {
       GH: '<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02 0 2.05.14 3.01.41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/>',
       GS: '<path d="M12 0 0 9.5l5.24 4.27A7.5 7.5 0 0 1 12 9.5a7.5 7.5 0 0 1 6.76 4.27L24 9.5 12 0Z"/><circle cx="12" cy="17" r="7"/>',
-      iD: '<circle cx="12" cy="12" r="12"/><g fill="white"><circle cx="7.4" cy="5.3" r="1"/><path d="M6.65 7.4H8.1v10H6.65zM10.2 7.4h3.9c3.7 0 5.3 2.65 5.3 5 0 2.6-2 5-5.3 5h-3.9zm1.45 1.3v7.4h2.3c3.25 0 4-2.45 4-3.7s-.65-3.7-3.85-3.7z"/></g>',
+      iD: '<circle cx="12" cy="12" r="12"/><g class="brand-knockout"><circle cx="7.4" cy="5.3" r="1"/><path d="M6.65 7.4H8.1v10H6.65zM10.2 7.4h3.9c3.7 0 5.3 2.65 5.3 5 0 2.6-2 5-5.3 5h-3.9zm1.45 1.3v7.4h2.3c3.25 0 4-2.45 4-3.7s-.65-3.7-3.85-3.7z"/></g>',
       '@': '<g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 6 9 7 9-7"/></g>'
     };
     return paths[mark] ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">' + paths[mark] + '</svg>' : escapeHTML(mark);
@@ -75,7 +75,7 @@
     var hero = site.hero || {};
     var scenes = window.MatIQScenes || [];
     var focus = (hero.pillars || []).map(function (item, i) {
-      var inner = '<h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.text) + '</p>';
+      var inner = '<h2>' + escapeHTML(item.title) + '</h2><p>' + escapeHTML(item.text) + '</p>';
       if (!scenes[i]) return '<li>' + inner + '</li>';
       return '<li><button type="button" class="focus-tab" data-scene="' + i + '" aria-pressed="false"><span class="focus-progress" aria-hidden="true"></span>' + inner + '</button></li>';
     }).join('');
@@ -87,19 +87,19 @@
     }).join('');
     var figure = scenes.length ? '<div class="slider-viewport" tabindex="0" aria-label="Research illustrations. Use the arrow keys to change slides."><div class="slider-track">' + slides + '</div></div>' +
       '<div class="slider-bar"><button type="button" class="slider-arrow" data-dir="-1" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
-      '<div class="slider-dots">' + dots + '</div><span class="slider-count" aria-live="polite"></span>' +
+      '<button type="button" class="slider-pause" aria-pressed="false">Pause</button><div class="slider-dots">' + dots + '</div><span class="slider-count" aria-live="polite"></span>' +
       '<button type="button" class="slider-arrow" data-dir="1" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>' +
       '<figcaption class="scene-caption"></figcaption>' : '';
     var actions = (hero.actions || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '" class="btn-' + escapeHTML(item.style) + '">' + escapeHTML(item.label) + '</a>'; }).join('');
     var socials = (hero.socials || []).map(function (item) { return '<a href="' + escapeHTML(item.url) + '"' + linkAttrs(item.url) + ' aria-label="' + escapeHTML(item.label) + '" title="' + escapeHTML(item.label) + '">' + socialIcon(item.mark) + '</a>'; }).join('');
     var heroTarget = document.getElementById('hero-data');
-    if (heroTarget) heroTarget.innerHTML = '<div class="hero-grid"><div class="hero-text"><h1>' + escapeHTML(hero.title) + '</h1><p class="hero-intro">' + escapeHTML(hero.eyebrow) + '</p><p class="hero-tagline">' + escapeHTML(hero.tagline) + '</p><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div><figure class="hero-figure">' + figure + '</figure></div><ul class="hero-focus">' + focus + '</ul>';
+    if (heroTarget) heroTarget.innerHTML = '<div class="hero-grid"><div class="hero-text"><h1>' + escapeHTML(hero.title.replace('Mat-IQ: ', '').replace(' Lab', '')) + '</h1><p class="hero-tagline">' + 'Materials discovery through atomistic simulation, machine learning, and quantum computing.' + '</p><div class="hero-cta">' + actions + '</div><div class="hero-social">' + socials + '</div></div><figure class="hero-figure">' + figure + '</figure></div><ul class="hero-focus">' + focus + '</ul>';
 
     var about = site.about || {};
     var paragraphs = (about.paragraphs || []).map(function (p, i) { return '<p' + (i === 0 ? ' class="about-lead"' : '') + '>' + escapeHTML(p) + '</p>'; }).join('');
     var highlights = (about.highlights || []).map(function (item) { return '<div class="highlight-card"><h3>' + escapeHTML(item.title) + '</h3><p><strong>' + escapeHTML(item.main) + '</strong></p><p class="subtle">' + escapeHTML(item.detail) + '</p></div>'; }).join('');
     var aboutTarget = document.getElementById('about-data');
-    if (aboutTarget) aboutTarget.innerHTML = '<div class="section-header"><h2>' + escapeHTML(about.title) + '</h2></div><div class="about-grid"><div class="about-text">' + paragraphs + '</div><div class="about-highlights">' + highlights + '</div></div>';
+    if (aboutTarget) aboutTarget.innerHTML = '<div class="section-header"><h2>' + escapeHTML(about.title) + '</h2></div><div class="about-grid"><div class="about-text"><p>' + escapeHTML(hero.eyebrow) + '</p>' + paragraphs + '</div><div class="about-highlights">' + highlights + '</div></div>';
 
     var careerTarget = document.getElementById('career-data');
     if (careerTarget) careerTarget.innerHTML = '<div class="career-path"><h2 class="sub-heading">Research journey</h2><div class="timeline">' + (site.career || []).map(function (item) { return '<div class="timeline-item"><span class="timeline-year">' + escapeHTML(item.year) + '</span><div class="timeline-content"><h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.text) + '</p></div></div>'; }).join('') + '</div></div>';
@@ -174,10 +174,10 @@
   function researchModal(item) {
     return [
       '<div class="modal-overlay" id="' + escapeHTML(item.id) + '">',
-      '<div class="modal-content" role="dialog" aria-modal="true">',
+      '<div class="modal-content" role="dialog" aria-modal="true" aria-label="' + escapeHTML(item.title) + '">',
       '<button class="modal-close" aria-label="Close">&times;</button>',
       '<h2>' + escapeHTML(item.title) + '</h2>',
-      item.body || '',
+      (item.body || '').replace(/next-generation[ -]/g, '').replace(/–/g, ' to ').replace(/<h4>/g, '<h3>').replace(/<\/h4>/g, '</h3>'),
       '<a href="https://scholar.google.com/citations?hl=en&user=_P6zuNAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener" class="btn-primary">View publications</a>',
       '</div></div>'
     ].join('');

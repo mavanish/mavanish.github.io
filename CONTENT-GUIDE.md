@@ -159,3 +159,6 @@ To add a new job, add another object inside the relevant row's `jobs` list:
   "buttonUrl": "#contact"
 }
 ```
+
+
+After updating JSON content, run `node scripts/build-content.mjs` to refresh the static HTML fallback. The browser also continues to load JSON for live rendering.

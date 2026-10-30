@@ -185,7 +185,8 @@
 // home page is revisited) its drawing animation replays.
 (function initHeroSlider() {
   var SLIDE_MS = 7000;
-  var index = 0, timer = null, paused = false;
+  var index = 0, timer = null, paused = false, held = false;
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function el(sel) { return document.querySelector(sel); }
   function all(sel) { return document.querySelectorAll(sel); }
@@ -221,8 +222,10 @@
 
   function schedule() {
     window.clearTimeout(timer);
+    var figure = el('.hero-figure');
+    if (figure) figure.classList.toggle('is-paused', paused || held || motion.matches || document.hidden);
     var hero = document.getElementById('hero');
-    if (paused || document.hidden || !hero || !hero.classList.contains('page-active')) return;
+    if (paused || held || motion.matches || document.hidden || !hero || !hero.classList.contains('page-active')) return;
     timer = window.setTimeout(function () { show(index + 1); }, SLIDE_MS);
   }
 
@@ -247,7 +250,22 @@
   });
 
   // Pause while the pointer is over the figure.
-  document.addEventListener('mouseover', function (e) { setPaused(!!e.target.closest('.hero-figure')); });
+  function syncPause() {
+    var figure = el('.hero-figure');
+    setPaused(!!figure && (figure.matches(':hover') || figure.contains(document.activeElement)));
+  }
+  document.addEventListener('mouseover', syncPause);
+  document.addEventListener('focusin', syncPause);
+  document.addEventListener('focusout', function () { window.setTimeout(syncPause, 0); });
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('.slider-pause');
+    if (!button) return;
+    held = !held;
+    button.textContent = held ? 'Play' : 'Pause';
+    button.setAttribute('aria-pressed', String(held));
+    schedule();
+  });
+  motion.addEventListener('change', schedule);
 
   // Swipe on touch screens.
   var startX = null;
@@ -404,7 +422,8 @@ function initModals() {
       var modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'clip';
+        modal._opener = card;
         var close = modal.querySelector('.modal-close');
         if (close) close.focus();
       }
@@ -422,7 +441,7 @@ function initModals() {
       e.stopPropagation();
       var overlay = btn.closest('.modal-overlay');
       overlay.classList.remove('open');
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     });
   });
 
@@ -432,7 +451,7 @@ function initModals() {
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) {
         overlay.classList.remove('open');
-        document.body.style.overflow = '';
+        document.body.style.overflowY = '';
       }
     });
   });
@@ -447,7 +466,25 @@ document.addEventListener('matiq:content-ready', initModals);
       document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
         overlay.classList.remove('open');
       });
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     }
   });
 })();
+
+// Keep keyboard focus within the open research dialog and return it on close.
+document.addEventListener('keydown', function (event) {
+  var overlay = document.querySelector('.modal-overlay.open');
+  if (!overlay || event.key !== 'Tab') return;
+  var items = Array.from(overlay.querySelectorAll('a[href], button, input, [tabindex="0"]'));
+  var first = items[0], last = items[items.length - 1];
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});
+new MutationObserver(function (records) {
+  records.forEach(function (record) {
+    var overlay = record.target;
+    if (overlay.matches('.modal-overlay') && !overlay.classList.contains('open') && overlay._opener) {
+      overlay._opener.focus(); overlay._opener = null;
+    }
+  });
+}).observe(document.body, {subtree: true, attributes: true, attributeFilter: ['class']});
