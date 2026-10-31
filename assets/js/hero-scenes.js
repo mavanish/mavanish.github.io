@@ -8,7 +8,7 @@
   function svg(label, body) {
     return '<svg class="scene-svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + label + '">' + body + '</svg>';
   }
-  function delay(ms) { return ' style="animation-delay:' + Math.round(ms) + 'ms"'; }
+  function delay(ms) { return ' style="animation-delay:' + Math.round(ms * 0.16) + 'ms"'; }
 
   // 1. Materials modeling: two grains of a square lattice meeting at a tilted boundary.
   function grainBoundary() {

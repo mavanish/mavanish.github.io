@@ -229,6 +229,7 @@
     if (figure) {
       figure.classList.toggle('is-paused', stopped);
       figure.classList.toggle('is-held', held);
+      figure.classList.toggle('is-suspended', motion.matches || document.hidden);
       var control = figure.querySelector('.slider-pause');
       if (control) {
         control.disabled = motion.matches;
@@ -250,17 +251,24 @@
     schedule();
   }
 
+  function select(i) {
+    // A new selection must not inherit a frozen animation from the previous slide.
+    held = false;
+    explicitlyPlaying = false;
+    show(i);
+  }
+
   document.addEventListener('click', function (e) {
     var target = e.target.closest('.slider-arrow, .slider-dot, .focus-tab');
     if (!target) return;
-    if (target.classList.contains('slider-arrow')) show(index + parseInt(target.getAttribute('data-dir'), 10));
-    else show(parseInt(target.getAttribute('data-scene'), 10));
+    if (target.classList.contains('slider-arrow')) select(index + parseInt(target.getAttribute('data-dir'), 10));
+    else select(parseInt(target.getAttribute('data-scene'), 10));
   });
 
   document.addEventListener('keydown', function (e) {
     if (!e.target.closest || !e.target.closest('.hero-figure')) return;
-    if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); select(index - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); select(index + 1); }
   });
 
   // Pause while the pointer is over the figure.
@@ -293,7 +301,7 @@
   document.addEventListener('touchend', function (e) {
     if (startX === null) return;
     var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 40) select(index + (dx < 0 ? 1 : -1));
     startX = null;
   });
 

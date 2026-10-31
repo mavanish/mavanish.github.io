@@ -115,7 +115,7 @@ body.page-mode > #hero.page-active { display: block; padding: calc(var(--nav-h) 
 .hero-figure { min-width: 0; }
 .slider-viewport { overflow: clip; border-radius: 4px; }
 .slider-viewport:focus-visible { outline-offset: 6px; }
-.slider-track { display: flex; transition: transform 0.9s cubic-bezier(.65,0,.25,1); }
+.slider-track { display: flex; transition: transform 0.22s ease-out; }
 .scene { flex: 0 0 100%; min-width: 0; }
 .slider-bar { display: flex; align-items: center; gap: var(--space-md); margin-top: 1.1rem; }
 .slider-arrow {
@@ -140,7 +140,7 @@ body.page-mode > #hero.page-active { display: block; padding: calc(var(--nav-h) 
 /* Scene animations run only while their scene is active, so each visit replays them. */
 .scene.is-active .atom, .scene.is-active .nn-node, .scene.is-active .nn-edge, .scene.is-active .nn-value,
 .scene.is-active .q-gate, .scene.is-active .q-bar, .scene.is-active .xrd-hkl, .scene.is-active .xrd-name {
-    animation: popIn 0.55s cubic-bezier(.2,.7,.3,1) both;
+    animation: popIn 0.28s cubic-bezier(.2,.7,.3,1) both;
 }
 .atom, .nn-node, .q-gate, .q-bar { transform-box: fill-box; transform-origin: center; }
 .q-bar { transform-origin: bottom; }
@@ -166,7 +166,7 @@ body.page-mode > #hero.page-active { display: block; padding: calc(var(--nav-h) 
 /* Quantum circuit */
 .q-wire { stroke: var(--rule); stroke-width: 1.5; }
 .q-wire-live { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 100; stroke-dashoffset: 100; }
-.scene.is-active .q-wire-live { animation: draw 1.4s ease-out forwards; }
+.scene.is-active .q-wire-live { animation: draw 0.65s ease-out forwards; }
 .q-ket { font-family: var(--serif); font-size: 15px; fill: var(--ink); }
 .q-gate rect { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
 .q-gate text { font: 600 14px var(--serif); fill: var(--ink); }
@@ -183,8 +183,8 @@ body.page-mode > #hero.page-active { display: block; padding: calc(var(--nav-h) 
 .xrd-axis { stroke: var(--ink-3); stroke-width: 1; }
 .xrd-trace { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
 .xrd-shock { stroke: var(--cobalt); }
-.scene.is-active .xrd-trace { animation: draw 2s ease-out 0.3s forwards; }
-.scene.is-active .xrd-shock { animation-delay: 1.9s; }
+.scene.is-active .xrd-trace { animation: draw 0.65s ease-out 0.05s forwards; }
+.scene.is-active .xrd-shock { animation-delay: 0.22s; }
 .xrd-hkl { fill: var(--ink-2); }
 .xrd-shock-name { fill: var(--cobalt); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -629,7 +629,7 @@ html:not(.js) .modal-close { display: none; }
 
 .brand-knockout { fill: var(--paper); }
 /* Pause the repeating effect, while letting a newly selected diagram finish drawing. */
-.hero-figure.is-paused .nn-pulse { animation-play-state: paused !important; }
+.hero-figure.is-suspended .nn-pulse { animation-play-state: paused !important; }
 .hero-figure.is-held * { animation-play-state: paused !important; }
 
 .mobile-nav a { font-family: var(--sans); }
