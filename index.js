@@ -255,6 +255,7 @@
     setPaused(!!figure && (figure.matches(':hover') || figure.contains(document.activeElement)));
   }
   document.addEventListener('mouseover', syncPause);
+  document.addEventListener('mouseout', function () { window.setTimeout(syncPause, 0); });
   document.addEventListener('focusin', syncPause);
   document.addEventListener('focusout', function () { window.setTimeout(syncPause, 0); });
   document.addEventListener('click', function (event) {
@@ -279,8 +280,8 @@
     startX = null;
   });
 
-  document.addEventListener('matiq:home-shown', function () { show(index); });
-  document.addEventListener('matiq:content-ready', function () { show(index); });
+  document.addEventListener('matiq:home-shown', function () { show(index); syncPause(); });
+  document.addEventListener('matiq:content-ready', function () { show(index); syncPause(); });
   document.addEventListener('visibilitychange', schedule);
 })();
 

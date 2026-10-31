@@ -628,6 +628,7 @@ html:not(.js) .modal-close { display: none; }
 }
 
 .brand-knockout { fill: var(--paper); }
-.hero-figure.is-paused * { animation-play-state: paused !important; }
+/* Pause the repeating effect, while letting a newly selected diagram finish drawing. */
+.hero-figure.is-paused .nn-pulse { animation-play-state: paused !important; }
 
 .mobile-nav a { font-family: var(--sans); }
