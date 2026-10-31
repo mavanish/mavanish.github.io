@@ -186,6 +186,7 @@
 (function initHeroSlider() {
   var SLIDE_MS = 7000;
   var index = 0, timer = null, paused = false, held = false;
+  var explicitlyPlaying = false;
   var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function el(sel) { return document.querySelector(sel); }
@@ -222,16 +223,29 @@
 
   function schedule() {
     window.clearTimeout(timer);
+    var interactionPaused = paused && !explicitlyPlaying;
     var figure = el('.hero-figure');
-    if (figure) figure.classList.toggle('is-paused', paused || held || motion.matches || document.hidden);
+    var stopped = interactionPaused || held || motion.matches || document.hidden;
+    if (figure) {
+      figure.classList.toggle('is-paused', stopped);
+      figure.classList.toggle('is-held', held);
+      var control = figure.querySelector('.slider-pause');
+      if (control) {
+        control.disabled = motion.matches;
+        control.textContent = motion.matches ? 'Reduced motion' : (stopped ? 'Play' : 'Pause');
+        control.title = motion.matches ? 'Your device requests reduced motion. Diagrams remain visible; use the arrows to select one.' : '';
+        control.setAttribute('aria-pressed', String(stopped));
+      }
+    }
     var hero = document.getElementById('hero');
-    if (paused || held || motion.matches || document.hidden || !hero || !hero.classList.contains('page-active')) return;
+    if (interactionPaused || held || motion.matches || document.hidden || !hero || !hero.classList.contains('page-active')) return;
     timer = window.setTimeout(function () { show(index + 1); }, SLIDE_MS);
   }
 
   function setPaused(value) {
     if (value === paused) return;
     paused = value;
+    explicitlyPlaying = false;
     all('.focus-tab').forEach(function (t) { t.classList.toggle('is-paused', paused); });
     schedule();
   }
@@ -261,10 +275,13 @@
   document.addEventListener('click', function (event) {
     var button = event.target.closest('.slider-pause');
     if (!button) return;
-    held = !held;
-    button.textContent = held ? 'Play' : 'Pause';
-    button.setAttribute('aria-pressed', String(held));
-    schedule();
+    var figure = el('.hero-figure');
+    var startPlaying = figure && figure.classList.contains('is-paused');
+    held = !startPlaying;
+    explicitlyPlaying = !!startPlaying;
+    // Replay completed NN/QC/XRD sequences so Play always produces visible motion.
+    if (startPlaying) show(index);
+    else schedule();
   });
   motion.addEventListener('change', schedule);
 
